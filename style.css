@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/*COLORS*/
+/*BOX SHADOWS*/
+/*@use "../utils/variables" as *;*/
+/*element position*/
+/*LOGO "ohmyfood"*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*ajouter l'icone fleche? ou bien le lien des menus?
+    a{
+        position: absolute;
+        justify-content: flex-start;
+        font-size: 1.6em;
+        color: /*mettre la variable pour gris foncé*/
+  /* }*/
+}
+
+header img {
+  width: 160px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* ajout des media queries à faire*/
+/*@use "../utils/" as *;*/
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 2em 1em;
+  /* title"ohmyfood"*/
+  /*icone  dimension*/
+}
+
+footer li {
+  font-family: Shrikhand;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  /*link position*/
+}
+
+footer li a {
+  margin-bottom: 0;
+  /*ne fonctionne pas!*/
+}
+
+footer li a:hover {
+  color: #99E2D0;
+}
+
+footer i {
+  font-size: 12px;
+  margin-right: 0.7em;
+}
+
+/*Reset CSS*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  text-decoration: none;
+  list-style: none;
+}
+
+/*TITLES*/
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+}
+
+/*@use "../utils/" as *;*/
+#localisation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eaeaea;
+  /*box-shadow: à faire*/
+  width: 100%;
+  height: 3em;
+}
+
+#information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: column nowrap;
+      -ms-flex-positive: column nowrap;
+          flex-grow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f6f6;
+  padding: 1em 3em;
+}
+
+#information h1 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+#information p {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

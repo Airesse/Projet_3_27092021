@@ -1,0 +1,13 @@
+/*@use "../utils/variables" as *;*/
+
+/*element position*/
+@mixin element-center($direction: row, $wrap: nowrap, $justify: center, $align: center) {
+    display: flex;
+    flex-grow: $direction $wrap;
+    justify-content: $justify;
+    align-items: $align;
+  
+}
+
+
+

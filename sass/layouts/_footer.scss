@@ -1,0 +1,32 @@
+/*@use "../utils/" as *;*/
+
+footer{
+    background-color: $color-grey4;
+    color: white;
+    padding: 2em 1em;
+
+    /* title"ohmyfood"*/
+    li{
+        font-family: Shrikhand;
+        margin-bottom: 1em;
+        font-size: 1.2em;
+
+        /*link position*/
+        a{
+            margin-bottom: 0;/*ne fonctionne pas!*/
+
+            &:hover{
+                color: $color-tertiary;
+            }
+
+        } 
+    }
+
+    /*icone  dimension*/
+    i{
+        font-size: 12px;
+        margin-right: 0.7em;
+    }
+
+
+}

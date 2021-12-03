@@ -1,0 +1,26 @@
+
+/*LOGO "ohmyfood"*/
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 160px;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    /*ajouter l'icone fleche? ou bien le lien des menus?
+    a{
+        position: absolute;
+        justify-content: flex-start;
+        font-size: 1.6em;
+        color: /*mettre la variable pour gris foncé*/;
+   /* }*/
+
+}
+
+/* ajout des media queries à faire*/
