@@ -52,28 +52,28 @@
             <!-- END of Localisation and Information PART-->
 
             <!--Operation PART-->
-            <article>
+            <article id="operation-box">
                 <h2>
                     Fonctionnement
                 </h2>
                 <div id="operation-cards">
-                    <a href="#" class="operation-card">
-                        <p class="number">1</p>
+                    <a href="#" class="operation__card">
+                        <span class="operation__card--number">1</span>
                         <i class="fas fa-mobile-alt"></i>
 
                         Choisissez un restaurant
 
                     </a>
-                    <a href="#" class="operation-card">
-                        <p class="number">2</p>
+                    <a href="#" class="operation__card">
+                        <span class="operation__card--number">2</span>
                         <i class="fas fa-list-ul"></i>
                         
                             Composez votre menu
                         
                     </a>
-                    <a href="#" class="operation-card">
-                        <p class="number">3</p>
-                        <i class="fas fa-store"></i>
+                    <a href="#" class="operation__card">
+                        <span class="operation__card--number">3</span>
+                        <i id="purple" class="fas fa-store"></i>
                         
                             Dégustez au restaurant
                         
@@ -83,37 +83,45 @@
             <!-- END of Operation PART-->
 
             <!--Restaurants PART-->
-            <article>
+            <article id="restaurants-box">
                 <h2>Restaurants</h2>
                 <div id="restaurants-cards">
-                    <a href="menu1.html" class="restaurant-card">                       
-                        <img alt="La palette du gout">  <!-- src à completer-->
+                    <a href="menu1.html" class="restaurant__card">                       
+                        <img src="images/restaurants/la-palette-du-gout.jpg" alt="La palette du gout"> 
                         <p class="new">Nouveau</p>
-                        <h4>La palette du goût</h4>
-                        <p>Menilmontant</p>
-                        <i class="far fa-heart coeur2"></i>
+                        <div class="restaurant__card--text">
+                            <h4>La palette du goût</h4>
+                            <p>Menilmontant</p>
+                            <i class="far fa-heart coeur2"></i>
+                        </div>
                     </a>
 
-                    <a href="menu2.html" class="restaurant-card">
-                        <img alt="La note enchantée">  <!-- src à completer-->
+                    <a href="menu2.html" class="restaurant__card">
+                        <img src="images/restaurants/la-note-enchantee.jpg" alt="La note enchantée">
                         <p class="new">Nouveau</p>
-                        <h4>La note enchantée</h4>
-                        <p>Charonne</p>
-                        <i class="far fa-heart coeur2"></i>
+                        <div class="restaurant__card--text">   
+                            <h4>La note enchantée</h4>
+                            <p>Charonne</p>
+                            <i class="far fa-heart coeur2"></i>
+                        </div>
                     </a>
 
-                    <a href="menu3.html" class="restaurant-card">
-                        <img alt="A la française">  <!-- src à completer-->
-                        <h4>À la française</h4>
-                        <p>Cité Rouge</p>
-                        <i class="heart"></i>
+                    <a href="menu3.html" class="restaurant__card">
+                        <img src="images/restaurants/a-la-francaise.jpg" alt="A la française">
+                        <div class="restaurant__card--text">   
+                            <h4>À la française</h4>
+                            <p>Cité Rouge</p>
+                            <i class="far fa-heart coeur2"></i>
+                        </div>
                     </a>
 
-                    <a href="menu4.html" class="restaurant-card">
-                        <img alt="Le delice des sens">  <!-- src à completer-->
-                        <h4>Le délice des sens</h4>
-                        <p>Folie-Méricourt</p>
-                        <i class="far fa-heart coeur2"></i>
+                    <a href="menu4.html" class="restaurant__card">
+                        <img src="images/restaurants/le-delice-des-sens.jpg" alt="Le delice des sens">
+                        <div class="restaurant__card--text">    
+                            <h4>Le délice des sens</h4>
+                            <p>Folie-Méricourt</p>
+                            <i class="far fa-heart coeur2"></i>
+                        </div>
                     </a>
                 </div>
             </article>

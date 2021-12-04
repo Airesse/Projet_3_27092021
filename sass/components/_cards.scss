@@ -1,0 +1,96 @@
+/* @use  "../utils/variables" as *;à rajouter*/
+
+/*--------- CARDS (page : "accueil")---------*/
+
+.operation__card{
+    @include element-center();
+    justify-content: flex-start;
+    width: 100%;
+    /*border: dotted 3px green;/*à retirer*/
+    padding: 1.5em 0.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    background-color: $color-grey1;
+    border-radius: 1.2em;
+    box-shadow: $color-grey3 3px 3px 10px;
+    
+    &--number{
+        @include element-center();
+        margin: 0 2em 0 -1.5em;
+
+        background-color: $color-primary;
+        border-radius: 20px;
+        color: white;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: normal;
+       
+    }
+
+    i{/*icone in a circle*/
+        margin-right: 2em;
+        color: $color-grey3;
+        font-size: 18px;
+    }
+}
+
+.restaurant__card{
+    
+    @include element-center();
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    box-shadow: $color-grey3 3px 3px 10px;    
+
+    img{
+        @include element-center();
+        height: 190px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+
+    &--text{
+        display: grid;
+        width: 100%;
+        padding: 0.9em 0.9em 0 0.9em;
+        grid-template-columns: repeat(2, 1fr); /*2l et 2c*/
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    h4{
+        grid-column: 1/2; /*column 1*/
+        grid-row: 1/2; /*lign 1*/
+        padding-bottom: 0.5em;
+    }
+
+    p{
+        grid-column: 1/2; /*column 1*/
+        grid-row: 2/3; /*lign 2*/
+    }
+
+    i{ /*icone heart*/
+        grid-column: 2/3; /*column 2*/
+        grid-row: 1/3; /*lign 1*/
+        @include heart-format ();
+
+    }
+}
+
+.new{ /*box "nouveau" on image*/
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background-color: $color-tertiary-light;
+    color: $color-tertiary;
+    padding: 0.5em;
+    font-weight: bold;
+    font-size: 0.85em;
+}

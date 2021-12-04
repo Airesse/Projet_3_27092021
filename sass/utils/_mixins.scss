@@ -9,5 +9,14 @@
   
 }
 
+/* icone heart : formatting*/
+@mixin heart-format(){
+    justify-self: flex-end;
+    align-self: center; /*vertical align*/
+    font-size: 24px;
+    margin-right: 1em;
+    color: $color-grey4;
+
+}
 
 

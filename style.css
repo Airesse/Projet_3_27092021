@@ -3,6 +3,7 @@
 /*BOX SHADOWS*/
 /*@use "../utils/variables" as *;*/
 /*element position*/
+/* icone heart : formatting*/
 /*LOGO "ohmyfood"*/
 header {
   display: -webkit-box;
@@ -57,12 +58,13 @@ footer li a {
 }
 
 footer li a:hover {
-  color: #99E2D0;
+  color: #058a69;
 }
 
 footer i {
   font-size: 12px;
   margin-right: 0.7em;
+  width: 12px;
 }
 
 /*Reset CSS*/
@@ -99,6 +101,7 @@ h1 {
 h2 {
   font-size: 1.3em;
   font-weight: 700;
+  margin: 2em 0 1em 1em;
 }
 
 h3 {
@@ -111,6 +114,7 @@ p {
 }
 
 /*@use "../utils/" as *;*/
+/*---------LOCALISATION PART---------*/
 #localisation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,11 +129,25 @@ p {
       -ms-flex-align: center;
           align-items: center;
   background-color: #eaeaea;
-  /*box-shadow: à faire*/
-  width: 100%;
+  -webkit-box-shadow: inset #7e7e7e 0px 4px 4px -3px;
+          box-shadow: inset #7e7e7e 0px 4px 4px -3px;
+  /*width: 100%;*/
+  /*provoque debordement*/
   height: 3em;
 }
 
+#localisation i {
+  padding-left: 3em;
+}
+
+#localisation input {
+  background-color: #eaeaea;
+  border: none;
+  padding-left: 1em;
+  font-weight: bold;
+}
+
+/*---------INFORMATION PART---------*/
 #information {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,8 +161,13 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*trouver pourquoi $direction ne fctionne pas*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #f6f6f6;
-  padding: 1em 3em;
+  padding: 1em 2.5em;
 }
 
 #information h1 {
@@ -154,5 +177,265 @@ p {
 
 #information p {
   text-align: center;
+  margin-bottom: 1.5em;
+  color: #353535;
+  /*font-weight: bold; /*pas sure*/
 }
+
+/*---------BOX OPERATION + BOX RESTAURANTS---------*/
+#operation-cards, #restaurants-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row wrap;
+      -ms-flex-positive: row wrap;
+          flex-grow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*même pb que pour $direction plus haut*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 1em;
+}
+
+#purple {
+  /*icone store in purple*/
+  color: #9356DC;
+}
+
+#restaurants-box {
+  background-color: #f6f6f6;
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+  margin: 2em 0 0 0;
+}
+
+/* @use  "../utils/variables" as *;à rajouter*/
+/*BUTTON  (page "accueil") */
+.button {
+  position: relative;
+  height: 50px;
+  margin: 1em 0 3em 0;
+  padding: 0 1em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  border-radius: 2em;
+  -webkit-box-shadow: #7e7e7e 3px 3px 10px;
+          box-shadow: #7e7e7e 3px 3px 10px;
+  /*à revoir avec gris plus clair(D +Bas + diffus)*/
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*texte à redimensionner (font-size ne marche pas)*/
+}
+
+.button:hover {
+  /*button lighter with larger shadow*/
+  background: -webkit-gradient(linear, left top, left bottom, from(#fd8ce9), to(#b487eb));
+  background: linear-gradient(#fd8ce9, #b487eb);
+  -webkit-box-shadow: #eaeaea 0 3px 3px 15px;
+          box-shadow: #eaeaea 0 3px 3px 15px;
+  /*à revoir*/
+  -webkit-transition: -webkit-box-shadow ease-in-out 1s;
+  transition: -webkit-box-shadow ease-in-out 1s;
+  transition: box-shadow ease-in-out 1s;
+  transition: box-shadow ease-in-out 1s, -webkit-box-shadow ease-in-out 1s;
+}
+
+/* @use  "../utils/variables" as *;à rajouter*/
+/*--------- CARDS (page : "accueil")---------*/
+.operation__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  /*border: dotted 3px green;/*à retirer*/
+  padding: 1.5em 0.5em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  border-radius: 1.2em;
+  -webkit-box-shadow: #7e7e7e 3px 3px 10px;
+          box-shadow: #7e7e7e 3px 3px 10px;
+}
+
+.operation__card--number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 2em 0 -1.5em;
+  background-color: #9356DC;
+  border-radius: 20px;
+  color: white;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.operation__card i {
+  /*icone in a circle*/
+  margin-right: 2em;
+  color: #7e7e7e;
+  font-size: 18px;
+}
+
+.restaurant__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  -webkit-box-shadow: #7e7e7e 3px 3px 10px;
+          box-shadow: #7e7e7e 3px 3px 10px;
+}
+
+.restaurant__card img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 190px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.restaurant__card--text {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  padding: 0.9em 0.9em 0 0.9em;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  /*2l et 2c*/
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+}
+
+.restaurant__card h4 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  /*column 1*/
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  /*lign 1*/
+  padding-bottom: 0.5em;
+}
+
+.restaurant__card p {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  /*column 1*/
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  /*lign 2*/
+}
+
+.restaurant__card i {
+  /*icone heart*/
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  /*column 2*/
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+  /*lign 1*/
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /*vertical align*/
+  font-size: 24px;
+  margin-right: 1em;
+  color: #353535;
+}
+
+.new {
+  /*box "nouveau" on image*/
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: #99E2D0;
+  color: #058a69;
+  padding: 0.5em;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+/* @use  "../utils/variables" as *;à rajouter*/
+/*---------Icone heart : formatting*-----------/
+
+/* description in _mixins.scss : @include heart-format();  */
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,23 @@
+/* @use  "../utils/variables" as *;à rajouter*/
+
+/*BUTTON  (page "accueil") */
+.button{    
+    position: relative;
+    height: 50px;
+    margin: 1em 0 3em 0;
+    padding: 0 1em;
+    background: linear-gradient($color-secondary, $color-primary);
+    border: none;
+    border-radius: 2em;
+    box-shadow: $color-grey3 3px 3px 10px;    /*à revoir avec gris plus clair(D +Bas + diffus)*/
+    color: white;
+    @include element-center();
+    /*texte à redimensionner (font-size ne marche pas)*/
+    
+
+    &:hover{ /*button lighter with larger shadow*/
+        background: linear-gradient($color-secondary-light, $color-primary-light );
+        box-shadow: $color-grey2 0 3px 3px 15px; /*à revoir*/
+        transition: box-shadow ease-in-out 1s;
+    }
+}

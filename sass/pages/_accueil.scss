@@ -1,17 +1,33 @@
 /*@use "../utils/" as *;*/
 
+/*---------LOCALISATION PART---------*/
 #localisation {
     @include element-center();
     background-color: $color-grey2;
-    /*box-shadow: à faire*/
-    width: 100%;
+    box-shadow: inset $color-grey3 0px 4px 4px -3px;
+    /*width: 100%;*/ /*provoque debordement*/
     height: 3em;
+
+    i {
+        padding-left: 3em;
+    }
+
+    input{
+        background-color: $color-grey2;
+        border: none;
+        padding-left: 1em;
+        font-weight: bold;
+        
+    }
 }
 
+
+/*---------INFORMATION PART---------*/
 #information {
-    @include element-center($direction: column);
+    @include element-center($direction: column); /*trouver pourquoi $direction ne fctionne pas*/
+    flex-direction: column;
     background-color: $color-grey1;
-    padding: 1em 3em;
+    padding: 1em 2.5em;
 
 
     h1 {
@@ -21,5 +37,31 @@
 
     p {
         text-align: center;
-    }
+        margin-bottom: 1.5em;
+        color: $color-grey4;
+        /*font-weight: bold; /*pas sure*/
+    }   
+}
+
+
+/*---------BOX OPERATION + BOX RESTAURANTS---------*/
+
+#operation-cards, #restaurants-cards{ 
+    @include element-center($wrap:wrap);/*même pb que pour $direction plus haut*/
+    flex-direction: column;
+    margin: 0 1em;   
+}
+
+#purple{ /*icone store in purple*/
+    color: $color-primary;
+}
+
+
+#restaurants-box {
+    background-color: $color-grey1;
+    padding-top: 0.5em;
+    padding-bottom: 2em;
+    margin: 2em 0 0 0;
+
+
 }
