@@ -1,0 +1,79 @@
+/*@use "../utils/" as *;*/
+/*@use "../components/" as *;*/
+
+.restaurant--image {  
+    position: relative;
+    display: flex;
+    width: 100%;
+    /*height: 220px;*/
+    object-fit: cover;
+}
+
+.restaurant__text{ /*(TITLE + ICONE HEART)  + ALL BOXES */
+    @include element-center();
+    flex-direction: column;
+    background-color: $color-grey1;
+    position: relative;
+    border-radius: 50px 50px 0 0;
+    margin-top: -25px;
+    padding: 1em;
+    width: 100%;
+    height: 100%; /*utile?*/
+   
+
+    &--title{ /*tITLE resto + iCONE HEART*/
+        width: 100%;
+        display: grid;
+        grid-template-columns: 78% 22%;
+        grid-template-rows: 100%;
+        align-content: center;
+        align-items: center;
+
+        h1{
+            justify-self: flex-start;
+            font-family: Shrikhand;
+            font-weight: 500;
+            font-size: 28px;
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        i{
+            /*@include element-center();*/ /*utile?*/
+            @include heart-format ();
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+    }
+}
+
+/*ENTREES*/
+
+section{ /*BOX ENTREES" ou DISHES ou DESSERT */
+    @include element-center();
+    flex-direction: column;
+    width: 100%;
+   
+    padding:  1em 0 3em 0;/*à verifier*/
+    background-color: $color-grey1;
+
+    h2{ /*BOX TITLE*/
+        display: flex;
+        width: 100%;
+        margin: 0;
+        align-items: center;/*à verifier*/
+        color: $color-grey4;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    hr{
+
+        width: 45px;
+        height: 5px;
+        margin-bottom: 1em;
+        border: none;
+        border-bottom: 3px solid $color-tertiary-light;
+    }
+}
+

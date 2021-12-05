@@ -1,0 +1,52 @@
+/* @use  "../utils/variables" as *;à rajouter*/
+
+/*--------- CARDS (page "menu") ---------*/
+
+
+.all-cards{ /*box "carte" : 3 cards with names of the dishes*/
+    width: 100%;
+}
+
+.menu__card{
+
+
+    &--text{ /*title + composition + price*/
+        width: 100%;
+        background-color: white;
+        border-radius: 15px;
+        padding: 1em;
+        box-shadow: $color-grey3 3px 3px 10px;
+    
+        position: relative;
+        /*@include element-center();
+        flex-direction: column;
+        align-items: flex-start;*/
+
+        display: grid;
+        grid-template-columns: 85% 15%; /*2c et 2l*/
+        grid-template-rows: 50% 50%;
+        justify-items: start;
+        align-items: center;
+
+        h3{
+            grid-column: 1/2; /*first column*/
+            grid-row: 1/2; /*first line*/
+            padding-bottom: 0.5em;
+        }
+    
+
+    }
+
+    &--details{
+        grid-column: 1/2; /*first column*/
+        grid-row: 2/3;  /*second line*/
+    }
+
+    &--price{
+
+        font-weight: bold;
+        grid-column: 2/3; /*second column*/
+        grid-row: 2/3;  /*second line*/
+    }
+        
+}

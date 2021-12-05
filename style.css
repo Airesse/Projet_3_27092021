@@ -4,6 +4,16 @@
 /*@use "../utils/variables" as *;*/
 /*element position*/
 /* icone heart : formatting*/
+/*icone heart animation*/
+/*@mixin heart-animation(){
+    opacity: 0;
+
+    &:hover{
+        opacity: 1;
+        background: linear-gradient($color-primary, $color-secondary);
+        transition: all 0,5s linear 0s;
+    }
+}*/
 /*LOGO "ohmyfood"*/
 header {
   display: -webkit-box;
@@ -19,13 +29,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*ajouter l'icone fleche? ou bien le lien des menus?
-    a{
-        position: absolute;
-        justify-content: flex-start;
-        font-size: 1.6em;
-        color: /*mettre la variable pour gris foncé*/
-  /* }*/
+  /*ajouter l'icone fleche? ou bien le lien des menus?*/
 }
 
 header img {
@@ -33,6 +37,31 @@ header img {
   height: auto;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+header a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6em;
+  color: #353535;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 0.4em;
+  padding-left: 1em;
+}
+
+header a i {
+  /*a revoir*/
+  height: 10px;
+  margin-right: 20%;
+  font-size: 20px;
 }
 
 /* ajout des media queries à faire*/
@@ -217,8 +246,8 @@ p {
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/
-/*BUTTON  (page "accueil") */
-.button {
+/*BUTTON  (class for page "accueil" and <button> for page"menu") */
+.button, button {
   position: relative;
   height: 50px;
   margin: 1em 0 3em 0;
@@ -246,7 +275,7 @@ p {
   /*texte à redimensionner (font-size ne marche pas)*/
 }
 
-.button:hover {
+.button:hover, button:hover {
   /*button lighter with larger shadow*/
   background: -webkit-gradient(linear, left top, left bottom, from(#fd8ce9), to(#b487eb));
   background: linear-gradient(#fd8ce9, #b487eb);
@@ -257,6 +286,150 @@ p {
   transition: -webkit-box-shadow ease-in-out 1s;
   transition: box-shadow ease-in-out 1s;
   transition: box-shadow ease-in-out 1s, -webkit-box-shadow ease-in-out 1s;
+  color: white;
+}
+
+/*adaptation BUTTON (page menu)*/
+button {
+  margin-bottom: 6em;
+}
+
+/*@use "../utils/" as *;*/
+/*@use "../components/" as *;*/
+.restaurant--image {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  /*height: 220px;*/
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.restaurant__text {
+  /*(TITLE + ICONE HEART)  + ALL BOXES */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f6f6f6;
+  position: relative;
+  border-radius: 50px 50px 0 0;
+  margin-top: -25px;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  /*utile?*/
+}
+
+.restaurant__text--title {
+  /*tITLE resto + iCONE HEART*/
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 78% 22%;
+      grid-template-columns: 78% 22%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restaurant__text--title h1 {
+  justify-self: flex-start;
+  font-family: Shrikhand;
+  font-weight: 500;
+  font-size: 28px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.restaurant__text--title i {
+  /*@include element-center();*/
+  /*utile?*/
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /*vertical align*/
+  font-size: 24px;
+  margin-right: 1em;
+  color: #7e7e7e;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
+/*ENTREES*/
+section {
+  /*BOX ENTREES" ou DISHES ou DESSERT */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 1em 0 3em 0;
+  /*à verifier*/
+  background-color: #f6f6f6;
+}
+
+section h2 {
+  /*BOX TITLE*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*à verifier*/
+  color: #353535;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+section hr {
+  width: 45px;
+  height: 5px;
+  margin-bottom: 1em;
+  border: none;
+  border-bottom: 3px solid #99E2D0;
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/
@@ -372,22 +545,22 @@ p {
   display: grid;
   width: 100%;
   padding: 0.9em 0.9em 0 0.9em;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   /*2l et 2c*/
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
 }
 
 .restaurant__card h4 {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  /*column 1*/
+  /*first column*/
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  /*lign 1*/
+  /*first line*/
   padding-bottom: 0.5em;
 }
 
@@ -395,11 +568,11 @@ p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  /*column 1*/
+  /*first column*/
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  /*lign 2*/
+  /*second line*/
 }
 
 .restaurant__card i {
@@ -407,11 +580,11 @@ p {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  /*column 2*/
+  /*second column */
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1/3;
-  /*lign 1*/
+  /* on 2 lines*/
   justify-self: flex-end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -419,7 +592,7 @@ p {
   /*vertical align*/
   font-size: 24px;
   margin-right: 1em;
-  color: #353535;
+  color: #7e7e7e;
 }
 
 .new {
@@ -432,6 +605,73 @@ p {
   padding: 0.5em;
   font-weight: bold;
   font-size: 0.85em;
+}
+
+/* @use  "../utils/variables" as *;à rajouter*/
+/*--------- CARDS (page "menu") ---------*/
+.all-cards {
+  /*box "carte" : 3 cards with names of the dishes*/
+  width: 100%;
+}
+
+.menu__card--text {
+  /*title + composition + price*/
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  -webkit-box-shadow: #7e7e7e 3px 3px 10px;
+          box-shadow: #7e7e7e 3px 3px 10px;
+  position: relative;
+  /*@include element-center();
+        flex-direction: column;
+        align-items: flex-start;*/
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 85% 15%;
+      grid-template-columns: 85% 15%;
+  /*2c et 2l*/
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__card--text h3 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  /*first column*/
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  /*first line*/
+  padding-bottom: 0.5em;
+}
+
+.menu__card--details {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  /*first column*/
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  /*second line*/
+}
+
+.menu__card--price {
+  font-weight: bold;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  /*second column*/
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  /*second line*/
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/

@@ -13,13 +13,28 @@ header{
         margin-bottom: 10px;
     }
 
-    /*ajouter l'icone fleche? ou bien le lien des menus?
+    /*ajouter l'icone fleche? ou bien le lien des menus?*/
     a{
-        position: absolute;
+       
+        display: flex;
         justify-content: flex-start;
+        align-items: center;
         font-size: 1.6em;
-        color: /*mettre la variable pour gris foncé*/;
-   /* }*/
+        color: $color-grey4;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 0.4em;
+        padding-left: 1em;
+
+        i{ /*a revoir*/
+            
+            height: 10px;
+            margin-right: 20%;
+            font-size: 20px;
+
+        }
+
+    }
 
 }
 

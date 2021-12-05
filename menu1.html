@@ -21,7 +21,7 @@
 
         <!-- Importation : CSS files -->
         <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="./sass/style.css">
+        <link  rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
@@ -31,47 +31,49 @@
             </a>
         </header>
         <main>
-            <img src="images/restaurants/la-palette-du-gout.jpg" alt="la palette du gout">
-            <article>
-                <h1>
-                    La palette du goût
-                </h1>
-                <i class="far fa-heart coeur2"></i>
+            <img class="restaurant--image" src="images/restaurants/la-palette-du-gout.jpg" alt="la palette du gout">
+            <article class="restaurant__text">
+                <div class="restaurant__text--title">
+                    <h1 >
+                        La palette du goût
+                    </h1>
+                    <i class="far fa-heart coeur2"></i>
+                </div>
 
                 <!--ENTREES-->
                 <section>
                     <h2>ENTRÉES</h2>
                     <hr>
                     <div class="all-cards">
-                        <div class="menu-card"> <!--ENTREE 1-->
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--ENTREE 1-->
+                            <div class="menu__card--text"> 
                                 <h3>Fricassée d'escargot</h3>
-                                <p>Au pimet d'espelette</p>
-                                <p class="card-price">25€</p>
+                                <p class="menu__card--detail">Au piment d'espelette</p>
+                                <p class="menu__card--price">25€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card"> <!--ENTREE 2-->   
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--ENTREE 2-->   
+                            <div class="menu__card--text"> 
                                 <h3>Foie gras de canard mi-cuit</h3>
                                 <p>Et ses copeaux de truffe noire</p>
-                                <p class="card-price">35€</p>
+                                <p class="menu__card--price">35€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card">  <!--ENTREE 3-->
-                            <div class="card-text"> 
+                        <div class="menu__card">  <!--ENTREE 3-->
+                            <div class="menu__card--text"> 
                                 <h3>Oeuf au plat</h3>
                                 <p>Assaisonné à la truffe sur lit de ...</p>
-                                <p class="card-price">20€</p>
+                                <p class="menu__card--price">20€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>    
@@ -84,35 +86,35 @@
                     <h2>PLATS</h2>
                     <hr>
                     <div class="all-cards">
-                        <div class="menu-card"> <!--DISH 1-->
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--DISH 1-->
+                            <div class="menu__card--text"> 
                                 <h3>Filet de boeuf aux herbes</h3>
                                 <p>Accompagné de sa ribambelle de légu...</p>
-                                <p class="card-price">40€</p>
+                                <p class="menu__card--price">40€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card"> <!--DISH 2-->   
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--DISH 2-->   
+                            <div class="menu__card--text"> 
                                 <h3>Parmentier de queue de boeuf</h3>
                                 <p>À la truffe noire sur sa purée de panais</p>
-                                <p class="card-price">35€</p>
+                                <p class="menu__card--price">35€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card">  <!--DISH 3-->
-                            <div class="card-text"> 
+                        <div class="menu__card">  <!--DISH 3-->
+                            <div class="menu__card--text"> 
                                 <h3>Filet de Turbot</h3>
                                 <p> Aux agrumes</p>
-                                <p class="card-price">44€</p>
+                                <p class="menu__card--price">44€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>    
@@ -125,35 +127,35 @@
                     <h2>DESSERTS</h2>
                     <hr>
                     <div class="all-cards">
-                        <div class="menu-card"> <!--DESSERT 1-->
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--DESSERT 1-->
+                            <div class="menu__card--text"> 
                                 <h3>Paris-Brest</h3>
                                 <p>Revisité</p>
-                                <p class="card-price">18€</p>
+                                <p class="menu__card--price">18€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card"> <!--DESSERT 2-->   
-                            <div class="card-text"> 
+                        <div class="menu__card"> <!--DESSERT 2-->   
+                            <div class="menu__card--text"> 
                                 <h3>Macacron au chocolat d'exception</h3>
                                 <p>Et glace à la vanille de Madagascar</p>
-                                <p class="card-price">22€</p>
+                                <p class="menu__card--price">22€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
 
-                        <div class="menu-card">  <!--DESSERT 3-->
-                            <div class="card-text"> 
+                        <div class="menu__card">  <!--DESSERT 3-->
+                            <div class="menu__card--text"> 
                                 <h3>Mousse au choclat</h3>
                                 <p>Au piment d'espelette et à la truffe noire</p>
-                                <p class="card-price">23€</p>
+                                <p class="menu__card--price">23€</p>
                             </div>
-                            <div class="card-validation">
+                            <div class="menu__card--validation">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                         </div>   
@@ -169,7 +171,41 @@
             </article>
         </main>
         <footer>
-            <!--copier celui de accueil.html quand OK-->
+            <nav>
+                <ul>
+                    <li>
+                        
+                        ohmyfood
+                        
+                    </li>
+
+                    <li>
+                       <i class="fas fa-utensils"></i>
+                       <a href="#">
+                            Proposez un restaurant
+                       </a>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-hands-helping"></i>
+                        <a href="#">
+                            Devenir partenaire
+                        </a>  
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Mentions légales
+                        </a>  
+                    </li>
+
+                    <li>
+                        <a href="mailto:adressemail@ohmyfood.com">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </footer>
     </body>
 </html>

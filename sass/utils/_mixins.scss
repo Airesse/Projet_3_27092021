@@ -15,8 +15,17 @@
     align-self: center; /*vertical align*/
     font-size: 24px;
     margin-right: 1em;
-    color: $color-grey4;
+    color: $color-grey3;
 
 }
 
+/*icone heart animation*/
+/*@mixin heart-animation(){
+    opacity: 0;
 
+    &:hover{
+        opacity: 1;
+        background: linear-gradient($color-primary, $color-secondary);
+        transition: all 0,5s linear 0s;
+    }
+}*/
