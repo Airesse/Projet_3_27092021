@@ -8,14 +8,15 @@
 }
 
 .menu__card{
-
+    display: flex;
+    margin-bottom: 1em;
 
     &--text{ /*title + composition + price*/
         width: 100%;
         background-color: white;
         border-radius: 15px;
-        padding: 1em;
-        box-shadow: $color-grey3 3px 3px 10px;
+        padding: 0.8em;
+        box-shadow: $color-grey2 3px 3px 10px;
     
         position: relative;
         /*@include element-center();
@@ -23,7 +24,7 @@
         align-items: flex-start;*/
 
         display: grid;
-        grid-template-columns: 85% 15%; /*2c et 2l*/
+        grid-template-columns: 87% 13%; /*2c et 2l*/
         grid-template-rows: 50% 50%;
         justify-items: start;
         align-items: center;
@@ -31,22 +32,33 @@
         h3{
             grid-column: 1/2; /*first column*/
             grid-row: 1/2; /*first line*/
-            padding-bottom: 0.5em;
+            padding-bottom: 0.3em;
         }
     
-
+        &-detail{
+            color: $color-grey4;
+            grid-column: 1/2; /*first column*/
+            grid-row: 2/3;  /*second line*/
+            font-size: 14.5px;
+        }
+    
+        &-price{
+    
+            font-weight: bold;
+            grid-column: 2/3; /*second column*/
+            grid-row: 2/3;  /*second line*/
+            padding-left: 10px;
+        }
     }
 
-    &--details{
-        grid-column: 1/2; /*first column*/
-        grid-row: 2/3;  /*second line*/
-    }
+    .menu__card--validation{
+        display: none;
 
-    &--price{
-
-        font-weight: bold;
-        grid-column: 2/3; /*second column*/
-        grid-row: 2/3;  /*second line*/
+        &:hover, :focus{
+            @mixin validation-format {
+                display: grid;
+            }
+        }
     }
         
 }

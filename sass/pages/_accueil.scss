@@ -27,19 +27,21 @@
     @include element-center($direction: column); /*trouver pourquoi $direction ne fctionne pas*/
     flex-direction: column;
     background-color: $color-grey1;
-    padding: 1em 2.5em;
+    padding: 1em 2.5em 0.5em 2.5em;
 
 
     h1 {
         text-align: center;
-        margin: 1em 0;
+        margin: 1em 0 0.5em 0;
+        font-weight: bold;
     }
 
     p {
         text-align: center;
-        margin-bottom: 1.5em;
+        margin-bottom: 1em;
         color: $color-grey4;
-        /*font-weight: bold; /*pas sure*/
+        font-size: 17px;
+
     }   
 }
 
@@ -49,7 +51,8 @@
 #operation-cards, #restaurants-cards{ 
     @include element-center($wrap:wrap);/*même pb que pour $direction plus haut*/
     flex-direction: column;
-    margin: 0 1em;   
+    margin: 0 1.5em; 
+
 }
 
 #purple{ /*icone store in purple*/

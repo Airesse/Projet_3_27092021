@@ -39,7 +39,7 @@
         }
 
         i{
-            /*@include element-center();*/ /*utile?*/
+            
             @include heart-format ();
             grid-column: 2/3;
             grid-row: 1/3;
@@ -54,22 +54,21 @@ section{ /*BOX ENTREES" ou DISHES ou DESSERT */
     flex-direction: column;
     width: 100%;
    
-    padding:  1em 0 3em 0;/*à verifier*/
+    padding:  1em 0 0.5em 0;/*à verifier*/
     background-color: $color-grey1;
 
     h2{ /*BOX TITLE*/
         display: flex;
-        width: 100%;
         margin: 0;
-        align-items: center;/*à verifier*/
+        align-self: start;/*à verifier*/
         color: $color-grey4;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: normal;
     }
 
     hr{
-
-        width: 45px;
+        align-self: start;
+        width: 40px;
         height: 5px;
         margin-bottom: 1em;
         border: none;
