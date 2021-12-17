@@ -12,20 +12,46 @@
     box-shadow: $color-grey3 3px 3px 10px;    /*à revoir avec gris plus clair(D +Bas + diffus)*/
     color: white;
     @include element-center();
-    /*texte à redimensionner (font-size ne marche pas)*/
+    transition: box-shadow ease-in-out 400ms;
+    
     
 
-    &:hover{ /*button lighter with larger shadow*/
+    &:hover, :active, :visited{ /*button lighter with larger shadow*/
         background: linear-gradient($color-secondary-light, $color-primary-light );
         box-shadow: $color-grey2 0 3px 3px 15px; /*à revoir*/
-        transition: box-shadow ease-in-out 1s;
         color: white;
     }
 }
 
-/*adaptation BUTTON (page menu)*/
+/*mobile version : adaptation BUTTON (page menu)*/
 
 button{
     margin: 1.5em 0 2.7em 0;
     padding: 0 3em;
+    
+}
+
+
+
+
+
+
+/* ADAPTATION I-PAD*/
+
+@media (min-width:768px){
+    .button, button{
+        height: 60px;
+        font-size: large;
+        
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+
+@media (min-width:1400px){
+    .button, button{
+        height: 85px;
+        font-size: x-large;
+        
+    }
 }

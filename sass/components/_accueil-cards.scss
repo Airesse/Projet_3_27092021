@@ -13,7 +13,7 @@
     border-radius: 1.2em;
     box-shadow: $color-grey5 3px 3px 10px;
     
-    &--number{
+    &--number{ 
         @include element-center();
         margin: 0 1.5em 0 -1.5em;
 
@@ -102,6 +102,82 @@
 
 
 
+
+
+/*ADAPTATION I-PAD*/
+@media (min-width:768px){
+
+    #operation-cards{
+        width: 60%;
+        display: flex;       
+    }
+
+    #restaurants-cards{
+        width: 80%;
+    }
+
+    .restaurant__card{
+        margin-bottom: 3em;
+        img{
+            height: 220px;
+        }
+
+        .new{
+            font-size: large;
+        }
+
+        &--text{
+            h4, p, i{
+                font-size: large;
+            }
+        }
+    }
+}
+
+
+/*ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+
+    #operation-cards{
+        width: 92%;
+        flex-direction: row;
+        gap: 3%;    
+    }
+
+    .operation__card{
+        &--number{ /*adaptation size circle*/
+            font-size: x-large;
+            height: 35px;
+            width: 35px;
+            margin:0 1.2em 0 -1.2em;
+        }
+
+        #icone-mobile{
+            font-size: x-large;
+        } 
+    }
+
+    #restaurants-cards{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3%;
+    }
+
+    .restaurant__card{
+        width: 45%;
+        font-size: x-large;
+        margin-bottom: 3%;
+
+        img{
+            height: 250px;
+        }
+
+        h4{
+            font-size: x-large;
+        }
+    }
+}
 
 
 

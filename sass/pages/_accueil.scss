@@ -55,6 +55,10 @@
 
 }
 
+#operation-cards{
+    margin-left: 2.5em;
+}
+
 #purple{ /*icone store in purple*/
     color: $color-primary;
 }
@@ -63,8 +67,76 @@
 #restaurants-box {
     background-color: $color-grey1;
     padding-top: 0.5em;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     margin: 2em 0 0 0;
 
 
+}
+
+
+
+
+
+
+
+
+
+/*ADAPTATION I-PAD*/
+@media (min-width:768px){
+
+    #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i{
+        font-size: large;
+    }
+
+    #operation-box, #restaurants-box{       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            align-self: start;
+        }
+    }
+
+    /*#operation-cards{
+        width: 60%;
+        display: flex;       
+
+    }
+
+    #restaurants-cards{
+        width: 80%;
+    }
+
+    .restaurant__card{
+        font-size: large;
+
+        &--text{
+            h4{
+                font-size: x-large; /*ne fonctionne pas pq?*/
+            /*}
+
+            p, i{
+                font-size: large;
+            }
+        /*}
+    /*}*/
+}
+
+/*ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+
+    #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i{
+        font-size: x-large;
+
+        p, input, i{
+            font-size: x-large;
+        }
+    }
+
+    #restaurants-box, #operation-box{ 
+        h2{ /*titles "Fonctionnement" and "Restaurants"*/
+            margin-left: 3.5%;
+        }
+    }
 }

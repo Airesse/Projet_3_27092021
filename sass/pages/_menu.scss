@@ -14,11 +14,8 @@
     flex-direction: column;
     background-color: $color-grey1;
     position: relative;
-    border-radius: 50px 50px 0 0;
-    margin-top: -25px;
     padding: 1em;
     width: 100%;
-    height: 100%; /*utile?*/
    
 
     &--title{ /*tITLE resto + iCONE HEART*/
@@ -28,6 +25,11 @@
         grid-template-rows: 100%;
         align-content: center;
         align-items: center;
+        position:absolute;
+        top: -40px;
+        border-radius: 40px 40px 0 0;
+        padding: 1em;
+        background-color: $color-grey1;
 
         h1{
             justify-self: flex-start;
@@ -57,6 +59,10 @@ section{ /*BOX ENTREES" ou DISHES ou DESSERT */
     padding:  1em 0 0.5em 0;/*à verifier*/
     background-color: $color-grey1;
 
+    #section__menuTitle--entree{
+        margin: 30px 0 0 0; /* because title is top=-40px*/
+    }
+    
     h2{ /*BOX TITLE*/
         display: flex;
         margin: 0;
@@ -76,3 +82,26 @@ section{ /*BOX ENTREES" ou DISHES ou DESSERT */
     }
 }
 
+
+
+
+
+/* ADAPTATION I-PAD*/
+@media (min-width:768px){
+    .restaurant__text--title h1, .restaurant__text--title i{           
+         /*name of resto + icone heart*/
+        font-size: xx-large;        
+    }
+
+    section{
+
+        #section__menuTitle--entree{
+            margin: 50px 0 0 0; /* because title is top=-40px*/
+            font-size: large;
+        }
+
+        h2{
+            font-size: large;
+        }
+    }
+}

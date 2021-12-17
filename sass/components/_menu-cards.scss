@@ -16,7 +16,7 @@
         background-color: white;
         border-radius: 15px;
         padding: 0.8em;
-        box-shadow: $color-grey2 3px 3px 10px;
+        box-shadow: $color-grey5 3px 3px 10px;
     
         position: relative;
         /*@include element-center();
@@ -62,3 +62,43 @@
     }
         
 }
+
+/* ADAPTATION I-PAD*/
+@media (min-width:768px){
+    .menu__card{
+        justify-content: center;
+    
+        &--text{ /*title + composition + price*/
+            width: 80%;
+            grid-template-columns: 90% 10%;
+            font-size: larger; /*title h3*/
+
+            &-detail{
+                font-size: large;
+            }
+
+            &-price{
+                font-size: large;
+            }
+        }                        
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+/*@media (min-width:1400px){
+
+    .menu__card--text{    
+        width: 60%;
+        grid-template-columns: 95% 5%;
+        font-size: 22px;
+
+        &-detail{
+            font-size: 20px;
+        }
+
+        &-price{
+            font-size: 20px;
+        }
+    }                   
+}*/
+

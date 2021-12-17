@@ -3,20 +3,25 @@
 footer{
     background-color: $color-grey4;
     color: white;
-    padding: 2em 1.5em 1em 1.5em;
+    padding: 1.5em 1.5em 2em 1.5em;
 
     /* title"ohmyfood"*/
+    #footer--title{
+        margin-bottom: 1em;
+    }
+    
+    /*footer subtitles */
     li{
         font-family: Shrikhand;
-        margin-bottom: 1em;
+        margin-bottom: 0.2em;
         font-size: 1.2em;
 
         /*link position*/
         a{
-            margin-bottom: 0;/*ne fonctionne pas!*/
+            /*margin-bottom: 0;/*ne fonctionne pas!*/
 
             &:hover{
-                color: $color-tertiary;
+                color: $color-secondary;
             }
 
         } 
@@ -28,6 +33,46 @@ footer{
         margin-right: 0.7em;
         width: 12px;
     }
+}
 
 
+
+
+
+/* ADAPTATION I-PAD*/
+
+@media (min-width:768px){
+    footer{
+        padding-top: 2.5em;
+        padding-bottom: 3em;
+
+        #footer--title{
+            font-size: xx-large;
+        }
+
+        li{
+            margin-bottom: 0.5em;
+
+            a{
+                font-size: x-large;
+            }
+        }
+
+        i{
+            font-size: large;
+            padding-right: 1em;
+        }
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+
+@media (min-width:1400px){
+    footer{
+        padding-left: 3.5%;
+
+        li {
+            margin-bottom: 0.6em;    
+        }
+    }
 }

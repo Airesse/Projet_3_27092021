@@ -32,14 +32,22 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*ajouter l'icone fleche? ou bien le lien des menus?*/
+  /*position: relative;*/
+}
+
+header #accueil__header--img {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 1em 0;
 }
 
 header img {
   width: 160px;
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  position: absolute;
+  left: 35%;
+  top: 20px;
 }
 
 header a {
@@ -58,45 +66,105 @@ header a {
   width: 100%;
   margin-bottom: 0.4em;
   padding-left: 1em;
+  /*icone reverse arrow*/
 }
 
 header a i {
   /*a revoir*/
   height: 10px;
-  margin-right: 20%;
   font-size: 20px;
+  position: absolute;
 }
 
-/* ajout des media queries à faire*/
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  header {
+    min-height: 80px;
+  }
+  header img {
+    height: 50px;
+    left: 40%;
+    width: 25%;
+  }
+  header a {
+    margin-bottom: 1em;
+  }
+  header a i {
+    font-size: x-large;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  header img {
+    left: 42%;
+  }
+}
+
 /*@use "../utils/" as *;*/
 footer {
   background-color: #353535;
   color: white;
-  padding: 2em 1.5em 1em 1.5em;
+  padding: 1.5em 1.5em 2em 1.5em;
   /* title"ohmyfood"*/
+  /*footer subtitles */
   /*icone  dimension*/
+}
+
+footer #footer--title {
+  margin-bottom: 1em;
 }
 
 footer li {
   font-family: Shrikhand;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
   font-size: 1.2em;
   /*link position*/
 }
 
 footer li a {
-  margin-bottom: 0;
-  /*ne fonctionne pas!*/
+  /*margin-bottom: 0;/*ne fonctionne pas!*/
 }
 
 footer li a:hover {
-  color: #058a69;
+  color: #FF79DA;
 }
 
 footer i {
   font-size: 12px;
   margin-right: 0.7em;
   width: 12px;
+}
+
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  footer {
+    padding-top: 2.5em;
+    padding-bottom: 3em;
+  }
+  footer #footer--title {
+    font-size: xx-large;
+  }
+  footer li {
+    margin-bottom: 0.5em;
+  }
+  footer li a {
+    font-size: x-large;
+  }
+  footer i {
+    font-size: large;
+    padding-right: 1em;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  footer {
+    padding-left: 3.5%;
+  }
+  footer li {
+    margin-bottom: 0.6em;
+  }
 }
 
 /*Reset CSS*/
@@ -237,6 +305,10 @@ p {
   margin: 0 1.5em;
 }
 
+#operation-cards {
+  margin-left: 2.5em;
+}
+
 #purple {
   /*icone store in purple*/
   color: #9356DC;
@@ -245,8 +317,69 @@ p {
 #restaurants-box {
   background-color: #f6f6f6;
   padding-top: 0.5em;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
   margin: 2em 0 0 0;
+}
+
+/*ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i {
+    font-size: large;
+  }
+  #operation-box, #restaurants-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #operation-box h2, #restaurants-box h2 {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+  /*#operation-cards{
+        width: 60%;
+        display: flex;       
+
+    }
+
+    #restaurants-cards{
+        width: 80%;
+    }
+
+    .restaurant__card{
+        font-size: large;
+
+        &--text{
+            h4{
+                font-size: x-large; /*ne fonctionne pas pq?*/
+  /*}
+
+            p, i{
+                font-size: large;
+            }
+        /*}
+    /*}*/
+}
+
+/*ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i {
+    font-size: x-large;
+  }
+  #localisation p, #localisation input, #localisation i, #information p, #information input, #information i, #operation-box p, #operation-box input, #operation-box i, #restaurants-box p, #restaurants-box input, #restaurants-box i, .operation__card p, .operation__card input, .operation__card i, .operation__card--number p, .operation__card--number input, .operation__card--number i, .operation__card i p, .operation__card i input, .operation__card i i {
+    font-size: x-large;
+  }
+  #restaurants-box h2, #operation-box h2 {
+    /*titles "Fonctionnement" and "Restaurants"*/
+    margin-left: 3.5%;
+  }
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/
@@ -276,27 +409,42 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*texte à redimensionner (font-size ne marche pas)*/
+  -webkit-transition: -webkit-box-shadow ease-in-out 400ms;
+  transition: -webkit-box-shadow ease-in-out 400ms;
+  transition: box-shadow ease-in-out 400ms;
+  transition: box-shadow ease-in-out 400ms, -webkit-box-shadow ease-in-out 400ms;
 }
 
-.button:hover, button:hover {
+.button:hover, .button :active, .button :visited, button:hover, button :active, button :visited {
   /*button lighter with larger shadow*/
   background: -webkit-gradient(linear, left top, left bottom, from(#fd8ce9), to(#b487eb));
   background: linear-gradient(#fd8ce9, #b487eb);
   -webkit-box-shadow: #eaeaea 0 3px 3px 15px;
           box-shadow: #eaeaea 0 3px 3px 15px;
   /*à revoir*/
-  -webkit-transition: -webkit-box-shadow ease-in-out 1s;
-  transition: -webkit-box-shadow ease-in-out 1s;
-  transition: box-shadow ease-in-out 1s;
-  transition: box-shadow ease-in-out 1s, -webkit-box-shadow ease-in-out 1s;
   color: white;
 }
 
-/*adaptation BUTTON (page menu)*/
+/*mobile version : adaptation BUTTON (page menu)*/
 button {
   margin: 1.5em 0 2.7em 0;
   padding: 0 3em;
+}
+
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  .button, button {
+    height: 60px;
+    font-size: large;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  .button, button {
+    height: 85px;
+    font-size: x-large;
+  }
 }
 
 /*@use "../utils/" as *;*/
@@ -332,12 +480,8 @@ button {
           flex-direction: column;
   background-color: #f6f6f6;
   position: relative;
-  border-radius: 50px 50px 0 0;
-  margin-top: -25px;
   padding: 1em;
   width: 100%;
-  height: 100%;
-  /*utile?*/
 }
 
 .restaurant__text--title {
@@ -354,6 +498,11 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  top: -40px;
+  border-radius: 40px 40px 0 0;
+  padding: 1em;
+  background-color: #f6f6f6;
 }
 
 .restaurant__text--title h1 {
@@ -411,6 +560,11 @@ section {
   background-color: #f6f6f6;
 }
 
+section #section__menuTitle--entree {
+  margin: 30px 0 0 0;
+  /* because title is top=-40px*/
+}
+
 section h2 {
   /*BOX TITLE*/
   display: -webkit-box;
@@ -434,6 +588,22 @@ section hr {
   margin-bottom: 1em;
   border: none;
   border-bottom: 3px solid #99E2D0;
+}
+
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  .restaurant__text--title h1, .restaurant__text--title i {
+    /*name of resto + icone heart*/
+    font-size: xx-large;
+  }
+  section #section__menuTitle--entree {
+    margin: 50px 0 0 0;
+    /* because title is top=-40px*/
+    font-size: large;
+  }
+  section h2 {
+    font-size: large;
+  }
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/
@@ -616,6 +786,74 @@ section hr {
   font-size: 0.85em;
 }
 
+/*ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  #operation-cards {
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #restaurants-cards {
+    width: 80%;
+  }
+  .restaurant__card {
+    margin-bottom: 3em;
+  }
+  .restaurant__card img {
+    height: 220px;
+  }
+  .restaurant__card .new {
+    font-size: large;
+  }
+  .restaurant__card--text h4, .restaurant__card--text p, .restaurant__card--text i {
+    font-size: large;
+  }
+}
+
+/*ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  #operation-cards {
+    width: 92%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 3%;
+  }
+  .operation__card--number {
+    /*adaptation size circle*/
+    font-size: x-large;
+    height: 35px;
+    width: 35px;
+    margin: 0 1.2em 0 -1.2em;
+  }
+  .operation__card #icone-mobile {
+    font-size: x-large;
+  }
+  #restaurants-cards {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 3%;
+  }
+  .restaurant__card {
+    width: 45%;
+    font-size: x-large;
+    margin-bottom: 3%;
+  }
+  .restaurant__card img {
+    height: 250px;
+  }
+  .restaurant__card h4 {
+    font-size: x-large;
+  }
+}
+
 /* @use  "../utils/variables" as *;à rajouter*/
 /*--------- CARDS (page "menu") ---------*/
 .all-cards {
@@ -636,8 +874,8 @@ section hr {
   background-color: white;
   border-radius: 15px;
   padding: 0.8em;
-  -webkit-box-shadow: #eaeaea 3px 3px 10px;
-          box-shadow: #eaeaea 3px 3px 10px;
+  -webkit-box-shadow: #c9c7c7 3px 3px 10px;
+          box-shadow: #c9c7c7 3px 3px 10px;
   position: relative;
   /*@include element-center();
         flex-direction: column;
@@ -697,6 +935,46 @@ section hr {
   display: none;
 }
 
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  .menu__card {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu__card--text {
+    /*title + composition + price*/
+    width: 80%;
+    -ms-grid-columns: 90% 10%;
+        grid-template-columns: 90% 10%;
+    font-size: larger;
+    /*title h3*/
+  }
+  .menu__card--text-detail {
+    font-size: large;
+  }
+  .menu__card--text-price {
+    font-size: large;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+/*@media (min-width:1400px){
+
+    .menu__card--text{    
+        width: 60%;
+        grid-template-columns: 95% 5%;
+        font-size: 22px;
+
+        &-detail{
+            font-size: 20px;
+        }
+
+        &-price{
+            font-size: 20px;
+        }
+    }                   
+}*/
 /* @use  "../utils/variables" as *;à rajouter*/
 /*---------Icone heart : formatting*-----------/
 

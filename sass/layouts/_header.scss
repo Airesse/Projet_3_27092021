@@ -5,15 +5,24 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /*position: relative;*/
+
+    #accueil__header--img{
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 1em 0;
+    }
 
     img{
         width: 160px;
         height: auto;
-        margin-top: 20px;
-        margin-bottom: 10px;
+        position: absolute;
+        left: 35%;
+        top: 20px;        
     }
 
-    /*ajouter l'icone fleche? ou bien le lien des menus?*/
+    
     a{
        
         display: flex;
@@ -26,11 +35,13 @@ header{
         margin-bottom: 0.4em;
         padding-left: 1em;
 
+        /*icone reverse arrow*/
         i{ /*a revoir*/
             
             height: 10px;
-            margin-right: 20%;
             font-size: 20px;
+            position: absolute;
+            
 
         }
 
@@ -38,4 +49,33 @@ header{
 
 }
 
-/* ajout des media queries à faire*/
+/* ADAPTATION I-PAD*/
+@media (min-width:768px){
+    header {    
+        min-height: 80px;
+
+        img{
+            height: 50px;
+            left: 40%;
+            width: 25%;
+            
+        }
+
+        a {
+            margin-bottom: 1em;
+
+            i{
+            font-size: x-large;
+            }
+        }   
+
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+    header img{
+        left: 42%;       
+    }
+}
+
