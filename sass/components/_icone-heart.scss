@@ -1,7 +1,28 @@
 /* @use  "../utils/variables" as *;à rajouter*/
+/* @use  "../utils/mixins" as *;à rajouter*/
+
+
 
 /*---------Icone heart : formatting*-----------/
 
 /* description in _mixins.scss : @include heart-format();  */
+
+/*---------Icone heart : animation------------*/
+
+/* description in _mixins.scss : @include heart-animation();  */
+
+/*.restaurant__text--title i { /*ne fonctionne pas
+    @include heart-animation();
+    
+
+}
+
+/*.fas{ /*ne fonctionne pas
+    opacity: 0;
+    @include heart-animation();
+    
+
+}*/
+
 
 

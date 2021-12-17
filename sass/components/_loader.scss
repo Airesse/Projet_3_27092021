@@ -1,0 +1,53 @@
+/* @use  "../utils/variables" as */
+
+/*---------LOADER : formatting*-----------*/
+
+
+/*à effacer
+header, main, footer{
+    display: none;
+}*/
+
+
+.loader{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    font-family: Shrikhand;
+    color: $color-primary;
+    border: 13px solid $color-secondary;
+    border-radius: 150px;
+    border-bottom: 15px solid $color-tertiary-light;
+    border-top: 15px solid $color-tertiary-light;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /*va avec apparition progressive de la page*/
+    animation-name: loaderRotation;
+    animation-duration: 1s;
+    
+    transition: loaderRotation ease-in-out 1s ;
+
+}
+
+
+
+
+.loader-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: $color-grey1;
+    animation-name: loaderEnd;
+    animation-delay: 2s; /*tps au bout duquel l'anim commence*/
+    animation-duration: 400ms;
+    animation-fill-mode: forwards; 
+    /*valeurs appliquées av et ap animation : derniere étape soit opacity 0 et z-1*/
+
+   
+
+}

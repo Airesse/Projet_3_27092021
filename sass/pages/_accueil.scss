@@ -1,4 +1,10 @@
 /*@use "../utils/" as *;*/
+/*-----Page progresive visualisation----*/
+
+header, main, footer{
+  
+    animation: pageVisual 1s 1s ease-in-out both;  
+}
 
 /*---------LOCALISATION PART---------*/
 #localisation {

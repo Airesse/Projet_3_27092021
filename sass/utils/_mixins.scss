@@ -19,21 +19,29 @@
 
 }
 
-/*icone heart animation*/
 /*@mixin heart-animation(){
+    color: transparent; /*pour remplacer le color de heart-format
+    background-size: 100%;
+    background-image: linear-gradient($color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    -webkit-textfield-color: transparent;
+    -moz-background-clip: text;
+    -moz-textfield-color: transparent;
+    transition: all ease-in-out 400ms;
     opacity: 0;
-
-    &:hover{
-        opacity: 1;
-        background: linear-gradient($color-primary, $color-secondary);
-        transition: all 0,5s linear 0s;
-    }
+    
+        &:hover{
+            opacity: 1;
+            
+        }
 }*/
+
+
 
 /* icone validation : formatting*/
 @mixin validation-format(){
 
-    color: $color-tertiaty-light;
+    color: $color-tertiary-light;
     background-color: white;
     border-radius: 20px;
     width: 20px;

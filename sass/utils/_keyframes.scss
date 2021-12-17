@@ -1,0 +1,49 @@
+/*@use "../utils/variables" as *;*/
+
+
+
+/*loader animation : disparition + rotation*/
+
+/*@keyframes loaderAnimation{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}*/
+
+
+/*-----loader disparition----*/
+
+@keyframes loaderEnd{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/*-----loader rotation------*/
+@keyframes loaderRotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*-----Page "Accueil" progressive apparition-----*/
+@keyframes pageVisuel{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

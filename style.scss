@@ -1,12 +1,15 @@
 @import "./sass/utils/_variables.scss";
 @import "./sass/utils/_mixins.scss";
+@import "./sass/utils/_keyframes.scss";
 @import "./sass/layouts/_header.scss";
 @import "./sass/layouts/_footer.scss";
 @import "./sass/base/_base.scss";
 @import "./sass/pages/_accueil.scss";
-@import "./sass/components/_button.scss";
 @import "./sass/pages/_menu.scss";
 @import "./sass/components/_accueil-cards.scss";
 @import "./sass/components/_menu-cards.scss";
+@import "./sass/components/_menu-animation.scss";
+@import "./sass/components/_button.scss";
 @import "./sass/components/_icone-heart.scss";
 @import "./sass/components/_icone-validation.scss";
+@import "./sass/components/_loader.scss";

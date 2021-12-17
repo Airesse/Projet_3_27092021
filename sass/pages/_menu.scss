@@ -45,6 +45,7 @@
             @include heart-format ();
             grid-column: 2/3;
             grid-row: 1/3;
+            
         }
     }
 }
@@ -88,13 +89,23 @@ section{ /*BOX ENTREES" ou DISHES ou DESSERT */
 
 /* ADAPTATION I-PAD*/
 @media (min-width:768px){
+    .restaurant--image{
+        height: 320px;
+    }
+    .restaurant__text--title{
+        padding-left: 3%;
+        padding-right: 3%;
+        top: -60px;
+        border-radius: 60px 60px 0 0;
+    }
+
     .restaurant__text--title h1, .restaurant__text--title i{           
-         /*name of resto + icone heart*/
+        /*name of resto + icone heart*/
         font-size: xx-large;        
     }
 
     section{
-
+        padding-left: 2.2%;
         #section__menuTitle--entree{
             margin: 50px 0 0 0; /* because title is top=-40px*/
             font-size: large;
@@ -102,6 +113,29 @@ section{ /*BOX ENTREES" ou DISHES ou DESSERT */
 
         h2{
             font-size: large;
+        }
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+    .restaurant--image{
+        height: 500px;
+    }
+
+    .restaurant__text--title h1, .restaurant__text--title i{           
+         /*name of resto + icone heart*/
+        font-size: 45px;   
+    }
+
+    section{
+        #section__menuTitle--entree{
+            margin: 80px 0 0 0; /* because title is top=-40px*/
+            font-size: x-large;
+        }
+
+        h2 {
+            font-size: x-large;
         }
     }
 }

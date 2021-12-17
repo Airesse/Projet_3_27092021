@@ -1,4 +1,16 @@
-/* @use  "../utils/variables" as *;à rajouter*/
+/* @use  "../utils/variables" as */
 
-/*---------Icone validation : formatting*-----------/
+/*---------Icone validation : formatting-----------*/
 /*in mixing : @mixin validation-format*/
+
+/*--------Icone validation : animation----------*/
+
+.menu__card--validation{
+    i{
+        &:hover{ /*rotation*/
+            transform: rotate(360deg);
+            transition: transform 1s ease-in ;    
+        }
+    }
+
+}
