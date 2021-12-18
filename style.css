@@ -6,35 +6,8 @@
 /*@use "../utils/variables" as *;*/
 /*element position*/
 /* icone heart : formatting*/
-/*@mixin heart-animation(){
-    color: transparent; /*pour remplacer le color de heart-format
-    background-size: 100%;
-    background-image: linear-gradient($color-primary, $color-secondary);
-    -webkit-background-clip: text;
-    -webkit-textfield-color: transparent;
-    -moz-background-clip: text;
-    -moz-textfield-color: transparent;
-    transition: all ease-in-out 400ms;
-    opacity: 0;
-    
-        &:hover{
-            opacity: 1;
-            
-        }
-}*/
 /* icone validation : formatting*/
 /*@use "../utils/variables" as *;*/
-/*loader animation : disparition + rotation*/
-/*@keyframes loaderAnimation{
-    0%{
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-    100%{
-        transform: rotate(360deg);
-        opacity: 0;
-    }
-}*/
 /*-----loader disparition----*/
 @-webkit-keyframes loaderEnd {
   from {
@@ -95,6 +68,32 @@
   }
 }
 
+/*-----Page "Menu" : type of dishes: progressive apparition-----*/
+@-webkit-keyframes dishVisuel {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes dishVisuel {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
 /*LOGO "ohmyfood"*/
 header {
   display: -webkit-box;
@@ -110,7 +109,6 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*position: relative;*/
 }
 
 header #accueil__header--img {
@@ -298,8 +296,9 @@ p {
 /*@use "../utils/" as *;*/
 /*-----Page progresive visualisation----*/
 header, main, footer {
-  -webkit-animation: pageVisual 1s 1s ease-in-out both;
-          animation: pageVisual 1s 1s ease-in-out both;
+  -webkit-animation: pageVisual 1s 1s;
+          animation: pageVisual 1s 1s;
+  /*opacity 0 to 1*/
 }
 
 /*---------LOCALISATION PART---------*/
@@ -920,8 +919,6 @@ section hr {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em;
-  overflow: hidden;
-  /*utile?*/
 }
 
 .menu__card--text {
@@ -952,9 +949,9 @@ section hr {
 
 .menu__card--text h3 {
   -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  /*first column*/
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  /*2 columns*/
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -967,9 +964,9 @@ section hr {
 .menu__card--text-detail {
   color: #353535;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  /*first column*/
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  /*first columns*/
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
@@ -1001,9 +998,9 @@ section hr {
   -ms-grid-row-span: 2;
   grid-row: 1/3;
   /* on 2 lines*/
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 1;
-  grid-column: 2/3;
+  grid-column: 3/4;
   /*second colum*/
 }
 
@@ -1027,8 +1024,8 @@ section hr {
   .menu__card--text {
     /*title + composition + price*/
     width: 80%;
-    -ms-grid-columns: 90% 10%;
-        grid-template-columns: 90% 10%;
+    -ms-grid-columns: 80% 10% 10%;
+        grid-template-columns: 80% 10% 10%;
     font-size: larger;
     /*title h3*/
   }
@@ -1044,8 +1041,8 @@ section hr {
 @media (min-width: 1400px) {
   .menu__card--text {
     width: 60%;
-    -ms-grid-columns: 90% 10%;
-        grid-template-columns: 90% 10%;
+    -ms-grid-columns: 80% 10% 10%;
+        grid-template-columns: 80% 10% 10%;
     font-size: x-large;
   }
   .menu__card--text-detail {
@@ -1057,7 +1054,28 @@ section hr {
 }
 
 /* @use  "../utils/variables" as *;à rajouter*/
-/*---------MENU ANIMATION*-----------*/
+/*---------MENU progressive apparition*-----------*/
+.section__menu--first {
+  -webkit-animation-name: dishVisuel;
+          animation-name: dishVisuel;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.section__menu--second {
+  -webkit-animation: dishVisuel 600ms 1.2s backwards;
+          animation: dishVisuel 600ms 1.2s backwards;
+}
+
+.section__menu--third {
+  -webkit-animation: dishVisuel 600ms 1.4s backwards;
+          animation: dishVisuel 600ms 1.4s backwards;
+}
+
 /* @use  "../utils/variables" as *;à rajouter*/
 /*BUTTON  (class for page "accueil" and <button> for page"menu") */
 .button, button {
@@ -1130,24 +1148,51 @@ button {
 /* description in _mixins.scss : @include heart-format();  */
 /*---------Icone heart : animation------------*/
 /* description in _mixins.scss : @include heart-animation();  */
-/*.restaurant__text--title i { /*ne fonctionne pas
-    @include heart-animation();
-    
-
+.restaurant__text--title i .fas {
+  opacity: 0;
+  color: transparent;
+  /*pour remplacer le color de heart-format*/
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-textfield-color: transparent;
+  -moz-background-clip: text;
+  -moz-textfield-color: transparent;
+  -webkit-transition: all ease-in-out 400ms;
+  transition: all ease-in-out 400ms;
+  opacity: 0;
 }
 
-/*.fas{ /*ne fonctionne pas
-    opacity: 0;
-    @include heart-animation();
-    
+.restaurant__text--title i .fas:hover {
+  opacity: 1;
+}
 
-}*/
 /* @use  "../utils/variables" as */
 /*---------Icone validation : formatting-----------*/
 /*in mixing : @mixin validation-format*/
 /*--------Icone validation : animation----------*/
+.menu__card--validation {
+  /*voir dans _menu-cards*/
+  /*à tester : display: grid; avec grid-column: 3/4; puis transform: display 1s ease-in-out;*/
+  background-color: #99E2D0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  /*width à rajouter?*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .menu__card--validation i:hover {
   /*rotation*/
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition: -webkit-transform 1s ease-in;
@@ -1189,8 +1234,8 @@ header, main, footer{
           animation-name: loaderRotation;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  -webkit-transition: loaderRotation ease-in-out 1s;
-  transition: loaderRotation ease-in-out 1s;
+  -webkit-transition: loaderRotation 1s ease-in-out;
+  transition: loaderRotation 1s ease-in-out;
 }
 
 .loader-animation {

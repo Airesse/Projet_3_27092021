@@ -2,19 +2,6 @@
 
 
 
-/*loader animation : disparition + rotation*/
-
-/*@keyframes loaderAnimation{
-    0%{
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-    100%{
-        transform: rotate(360deg);
-        opacity: 0;
-    }
-}*/
-
 
 /*-----loader disparition----*/
 
@@ -45,5 +32,19 @@
     }
     to{
         opacity: 1;
+    }
+}
+
+/*-----Page "Menu" : type of dishes: progressive apparition-----*/
+
+@keyframes dishVisuel{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

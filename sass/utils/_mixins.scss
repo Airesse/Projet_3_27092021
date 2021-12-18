@@ -19,8 +19,8 @@
 
 }
 
-/*@mixin heart-animation(){
-    color: transparent; /*pour remplacer le color de heart-format
+@mixin heart-animation(){
+    color: transparent; /*pour remplacer le color de heart-format*/
     background-size: 100%;
     background-image: linear-gradient($color-primary, $color-secondary);
     -webkit-background-clip: text;
@@ -34,12 +34,12 @@
             opacity: 1;
             
         }
-}*/
+}
 
 
 
 /* icone validation : formatting*/
-@mixin validation-format(){
+@mixin validation-icone-format(){
 
     color: $color-tertiary-light;
     background-color: white;
@@ -47,4 +47,14 @@
     width: 20px;
     height: 20px;
 
+}
+
+@mixin validation-box(){
+    background-color: $color-tertiary-light;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    /*width à rajouter?*/
+    display: flex;
 }

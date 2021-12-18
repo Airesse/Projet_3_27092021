@@ -10,7 +10,7 @@
 .menu__card{
     display: flex;
     margin-bottom: 1em;
-    overflow: hidden;/*utile?*/
+    
 
     &--text{ /*title + composition + price*/
         width: 100%;
@@ -32,7 +32,7 @@
         align-items: center;
 
         h3{
-            grid-column: 1/2; /*first column*/
+            grid-column: 1/3; /*2 columns*/
             grid-row: 1/2; /*first line*/
             padding-bottom: 0.3em;
             overflow: hidden;
@@ -41,7 +41,7 @@
     
         &-detail{
             color: $color-grey4;
-            grid-column: 1/2; /*first column*/
+            grid-column: 1/3; /*first columns*/
             grid-row: 2/3;  /*second line*/
             font-size: 14.5px;
             overflow: hidden;
@@ -63,10 +63,10 @@
         background-color: $color-tertiary;
         height: 100%;
         grid-row: 1/3; /* on 2 lines*/
-        grid-column: 2/3; /*second colum*/
+        grid-column: 3/4; /*second colum*/
 
         &:hover, :active{
-            @include validation-format ();
+            @include validation-icone-format ();
             display: grid;
             
         }
@@ -81,7 +81,7 @@
     
         &--text{ /*title + composition + price*/
             width: 80%;
-            grid-template-columns: 90% 10%;
+            grid-template-columns: 80% 10% 10%;
             font-size: larger; /*title h3*/
 
             &-detail{
@@ -100,7 +100,7 @@
 
     .menu__card--text{    
         width: 60%;
-        grid-template-columns: 90% 10%;
+        grid-template-columns: 80% 10% 10%;
         font-size: x-large;
 
         &-detail{

@@ -11,18 +11,16 @@
 
 /* description in _mixins.scss : @include heart-animation();  */
 
-/*.restaurant__text--title i { /*ne fonctionne pas
-    @include heart-animation();
+
+.restaurant__text--title{ 
+    i .fas{
+        opacity: 0;
+        @include heart-animation();
+    }
+
     
 
 }
-
-/*.fas{ /*ne fonctionne pas
-    opacity: 0;
-    @include heart-animation();
-    
-
-}*/
 
 
 
