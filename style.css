@@ -931,9 +931,6 @@ section hr {
           box-shadow: #c9c7c7 3px 3px 10px;
   position: relative;
   overflow: hidden;
-  /*@include element-center();
-        flex-direction: column;
-        align-items: flex-start;*/
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 74% 13% 13%;
@@ -1145,30 +1142,30 @@ button {
 /* @use  "../utils/mixins" as *;à rajouter*/
 /*---------Icone heart : formatting*-----------/
 
-/* description in _mixins.scss : @include heart-format();  */
+/* composition in _mixins.scss :@mixin heart-format() */
+/*PAGE "ACCUEIL" :@include heart-format() dans  _accueil-cards.scss  */
+/*PAGES "MENU" : @include heart-format() dans _menu.scss*/
 /*---------Icone heart : animation------------*/
-/* description in _mixins.scss : @include heart-animation();  */
-.restaurant__text--title i .fas {
+/* composition in _mixins.scss : @mixin heart-animation();  */
+.full {
   opacity: 0;
+}
+
+.full:hover, .full:active {
+  /*background-size: 100%;*/
   color: transparent;
-  /*pour remplacer le color de heart-format*/
-  background-size: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-textfield-color: transparent;
-  -moz-background-clip: text;
-  -moz-textfield-color: transparent;
-  -webkit-transition: all ease-in-out 400ms;
-  transition: all ease-in-out 400ms;
-  opacity: 0;
-}
-
-.restaurant__text--title i .fas:hover {
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
   opacity: 1;
 }
 
 /* @use  "../utils/variables" as */
+/* @use  "../utils/mixins" as */
+/* @use  "../utils/keyframes"" as */
 /*---------Icone validation : formatting-----------*/
 /*in mixing : @mixin validation-format*/
 /*--------Icone validation : animation----------*/

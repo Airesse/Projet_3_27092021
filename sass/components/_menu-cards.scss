@@ -21,9 +21,7 @@
     
         position: relative;
         overflow: hidden;
-        /*@include element-center();
-        flex-direction: column;
-        align-items: flex-start;*/
+        
 
         display: grid;
         grid-template-columns: 74% 13% 13%; /*2c et 2l*/

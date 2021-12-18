@@ -20,20 +20,15 @@
 }
 
 @mixin heart-animation(){
-    color: transparent; /*pour remplacer le color de heart-format*/
-    background-size: 100%;
+    
+    /*background-size: 100%;*/
+    color: transparent;
     background-image: linear-gradient($color-primary, $color-secondary);
     -webkit-background-clip: text;
     -webkit-textfield-color: transparent;
-    -moz-background-clip: text;
-    -moz-textfield-color: transparent;
-    transition: all ease-in-out 400ms;
-    opacity: 0;
-    
-        &:hover{
-            opacity: 1;
-            
-        }
+    transition: all 400ms;
+    opacity: 1;
+
 }
 
 

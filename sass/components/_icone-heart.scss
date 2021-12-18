@@ -3,24 +3,30 @@
 
 
 
+
+
 /*---------Icone heart : formatting*-----------/
 
-/* description in _mixins.scss : @include heart-format();  */
+/* composition in _mixins.scss :@mixin heart-format() */
+/*PAGE "ACCUEIL" :@include heart-format() dans  _accueil-cards.scss  */
+/*PAGES "MENU" : @include heart-format() dans _menu.scss*/
+
+
+
+
 
 /*---------Icone heart : animation------------*/
 
-/* description in _mixins.scss : @include heart-animation();  */
+/* composition in _mixins.scss : @mixin heart-animation();  */
 
-
-.restaurant__text--title{ 
-    i .fas{
-        opacity: 0;
-        @include heart-animation();
-    }
-
-    
-
+.full{
+    opacity: 0;  
 }
+ 
+.full:hover, .full:active{
+    @include heart-animation();
+}
+
 
 
 
