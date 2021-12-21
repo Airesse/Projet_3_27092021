@@ -127,8 +127,12 @@
         }
 
         &--text{
-            h4, p, i{
+            h4, p{
                 font-size: large;
+            }
+
+            i{
+                font-size: x-large;
             }
         }
     }
@@ -175,6 +179,10 @@
 
         h4{
             font-size: x-large;
+        }
+
+        i{
+            font-size: xx-large;
         }
     }
 }

@@ -24,10 +24,10 @@ header, main, footer{
     justify-content: center;
     align-items: center;
     z-index: 2; /*va avec apparition progressive de la page*/
-    animation-name: loaderRotation;
+    animation-name: elementRotation;
     animation-duration: 1s;
     
-    transition: loaderRotation 1s ease-in-out ;
+    transition: elementRotation 1s ease-in-out ;
 
 }
 

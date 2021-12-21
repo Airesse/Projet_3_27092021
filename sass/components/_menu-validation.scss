@@ -1,0 +1,68 @@
+/* @use  "../utils/variables" as */
+/* @use  "../utils/mixins" as */
+/* @use  "../utils/keyframes"" as */
+
+/*---------validation : formatting-----------*/
+/*icone in _mixins.scss : @mixin validation-icone-format */
+/*position in _mixins.scss : @mixin validation-box */
+
+
+/*-------- box validation : animation----------*/
+
+/*.menu__card--validation{
+    /*voir dans _menu-cards*/
+    /*display: none;
+    width: 0;
+    transform: display 1s ease-in-out;
+    /*@include validation-box();*/
+            
+    /*&:hover{ /*rotation*/
+       /* @include validation-icone-format();
+        transform: rotate(360deg);
+        animation: transform 1s ease-in ;*/
+        
+   /* }*/
+/*}*/
+
+.menu__card--validation i{
+    display: none;
+}
+
+.menu__card:hover{
+    border-radius: 15px;
+    cursor: pointer;
+
+    .menu__card--text{
+        width: 70%;
+        border-radius: 15px 0 0 15px;
+        /*border: 3px red solid; /*a effacer*/
+
+        h3{
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .menu__card--validation{
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        justify-content: center;
+        border-radius: 0 15px 15px 0;
+        height: 82px;
+        width: 10%;
+        background-color: $color-tertiary-light;
+       
+
+        i{
+           display: flex;
+           animation: elementRotation 1s both;
+           @include validation-icone-format();
+           
+
+                       
+        }
+    }
+}
