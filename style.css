@@ -1,21 +1,11 @@
 @charset "UTF-8";
 /*COLORS*/
-/*shadows cards "accueil"
-
-/*BOX SHADOWS*/
-/*@use "../utils/variables" as *;*/
+/*shadow cards "accueil"*/
+/*@use "../utils/variables" as *;
+@use "../utils/keyframes" as *;*/
 /*element position*/
 /* icone heart : formatting*/
 /* icone validation : formatting*/
-/*@mixin validation-box(){*/
-/*background-color: $color-tertiary-light;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    
-}*/
 /*@use "../utils/variables" as *;*/
 /*-----loader disparition----*/
 @-webkit-keyframes loaderEnd {
@@ -103,6 +93,9 @@
   }
 }
 
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;*/
 /*LOGO "ohmyfood"*/
 header {
   display: -webkit-box;
@@ -155,7 +148,6 @@ header a {
 }
 
 header a i {
-  /*a revoir*/
   height: 10px;
   font-size: 20px;
   position: absolute;
@@ -190,7 +182,9 @@ header a i {
   }
 }
 
-/*@use "../utils/" as *;*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;*/
 footer {
   background-color: #353535;
   color: white;
@@ -209,10 +203,6 @@ footer li {
   margin-bottom: 0.2em;
   font-size: 1.2em;
   /*link position*/
-}
-
-footer li a {
-  /*margin-bottom: 0;/*ne fonctionne pas!*/
 }
 
 footer li a:hover {
@@ -302,8 +292,12 @@ p {
   font-weight: 300;
 }
 
-/*@use "../utils/" as *;*/
-/*-----Page progressive visualisation----*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;
+@use "../layouts/" as *;*/
+/*MOBILE VERSION*/
+/*-----Page "Accueil"progressive visualisation----*/
 header, main, footer {
   -webkit-animation: pageVisual 400ms 1s ease-in-out;
           animation: pageVisual 400ms 1s ease-in-out;
@@ -312,12 +306,16 @@ header, main, footer {
 
 /*---------LOCALISATION PART---------*/
 #localisation {
+  /*localisation box*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -327,16 +325,16 @@ header, main, footer {
   background-color: #eaeaea;
   -webkit-box-shadow: inset #7e7e7e 0px 4px 4px -3px;
           box-shadow: inset #7e7e7e 0px 4px 4px -3px;
-  /*width: 100%;*/
-  /*provoque debordement*/
   height: 3em;
 }
 
 #localisation i {
+  /*icone map*/
   padding-left: 3em;
 }
 
 #localisation input {
+  /*localisation text*/
   background-color: #eaeaea;
   border: none;
   padding-left: 1em;
@@ -345,23 +343,24 @@ header, main, footer {
 
 /*---------INFORMATION PART---------*/
 #information {
+  /*information box*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: column nowrap;
-      -ms-flex-positive: column nowrap;
-          flex-grow: column nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*trouver pourquoi $direction ne fctionne pas*/
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   background-color: #f6f6f6;
   padding: 1em 2.5em 0.5em 2.5em;
 }
@@ -384,20 +383,20 @@ header, main, footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row wrap;
-      -ms-flex-positive: row wrap;
-          flex-grow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /*même pb que pour $direction plus haut*/
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   margin: 0 1.5em;
 }
 
@@ -411,10 +410,18 @@ header, main, footer {
 }
 
 #restaurants-box {
+  /*title + all restaurant-card*/
   background-color: #f6f6f6;
   padding-top: 0.5em;
   padding-bottom: 3em;
   margin: 2em 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /*ADAPTATION I-PAD*/
@@ -439,29 +446,6 @@ header, main, footer {
         -ms-grid-row-align: start;
         align-self: start;
   }
-  /*#operation-cards{
-        width: 60%;
-        display: flex;       
-
-    }
-
-    #restaurants-cards{
-        width: 80%;
-    }
-
-    .restaurant__card{
-        font-size: large;
-
-        &--text{
-            h4{
-                font-size: x-large; /*ne fonctionne pas pq?*/
-  /*}
-
-            p, i{
-                font-size: large;
-            }
-        /*}
-    /*}*/
 }
 
 /*ADAPTATION COMPUTER*/
@@ -478,37 +462,39 @@ header, main, footer {
   }
 }
 
-/*@use "../utils/" as *;*/
-/*@use "../components/" as *;*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;
+@use "../layouts/" as *;*/
 .restaurant--image {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  /*height: 220px;*/
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .restaurant__text {
-  /*(TITLE + ICONE HEART)  + ALL BOXES */
+  /*(TITLE + ICONE HEART) + ALL BOXES */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   background-color: #f6f6f6;
   position: relative;
   padding: 1em;
@@ -516,7 +502,7 @@ header, main, footer {
 }
 
 .restaurant__text--title {
-  /*tITLE resto + iCONE HEART*/
+  /*TITLE resto + ICONE HEART*/
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -537,6 +523,7 @@ header, main, footer {
 }
 
 .restaurant__text--title h1 {
+  /*TITLE resto*/
   justify-self: flex-start;
   font-family: Shrikhand;
   font-weight: 500;
@@ -550,6 +537,7 @@ header, main, footer {
 }
 
 .restaurant__text--title i {
+  /*ICONE HEART*/
   justify-self: flex-end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -566,28 +554,28 @@ header, main, footer {
   grid-row: 1/3;
 }
 
-/*ENTREES*/
+/* PART( ENTREES + DISHES + DESSERTS) */
 section {
-  /*BOX ENTREES" ou DISHES ou DESSERT */
+  /*BOX ENTREES" or DISHES or DESSERT */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   width: 100%;
   padding: 1em 0 0.5em 0;
-  /*à verifier*/
   background-color: #f6f6f6;
 }
 
@@ -604,7 +592,6 @@ section h2 {
   margin: 0;
   -ms-flex-item-align: start;
       align-self: start;
-  /*à verifier*/
   color: #353535;
   font-size: 16px;
   font-weight: normal;
@@ -668,15 +655,22 @@ section hr {
   }
 }
 
-/* @use  "../utils/variables" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
+/*VERSION MOBILE*/
 /*--------- CARDS (page : "accueil")---------*/
+/*PART OPERATION*/
 .operation__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -697,12 +691,16 @@ section hr {
 }
 
 .operation__card--number {
+  /*number in a circle*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -722,7 +720,7 @@ section hr {
 }
 
 .operation__card i {
-  /*icone in a circle*/
+  /*icones : mobile, list, shop*/
   margin-right: 1em;
   color: #7e7e7e;
   font-size: 18px;
@@ -732,47 +730,62 @@ section hr {
   font-size: 19px;
 }
 
+/*PART RESTAURANTS*/
+#restaurant__cards {
+  width: 100%;
+}
+
 .restaurant__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   position: relative;
   width: 100%;
+  height: 250px;
   background-color: white;
   border-radius: 20px;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   padding-bottom: 0.5em;
   -webkit-box-shadow: #c9c7c7 3px 3px 10px;
           box-shadow: #c9c7c7 3px 3px 10px;
+}
+
+.restaurant__card a {
+  height: 75%;
+  width: 100%;
 }
 
 .restaurant__card img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 170px;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -780,18 +793,21 @@ section hr {
 }
 
 .restaurant__card--text {
+  /* title + subtitle + icone heart*/
   display: -ms-grid;
   display: grid;
+  height: 25%;
   width: 100%;
-  padding: 0.9em 0.9em 0 0.9em;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  padding: 0.9em 0.9em 0.4em 0.9em;
+  -ms-grid-columns: 90% 10%;
+      grid-template-columns: 90% 10%;
   /*2l et 2c*/
   -ms-grid-rows: 50% 50%;
       grid-template-rows: 50% 50%;
 }
 
 .restaurant__card h4 {
+  /*title: restaurant's name*/
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -806,6 +822,7 @@ section hr {
 }
 
 .restaurant__card p {
+  /*subtites: localisation restaurant*/
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -821,11 +838,11 @@ section hr {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  /*second column */
+  /*second column*/
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  /* first line*/
+  /*first line*/
   justify-self: flex-end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -851,19 +868,19 @@ section hr {
 /*ADAPTATION I-PAD*/
 @media (min-width: 768px) {
   #operation-cards {
+    /*all 3 operation cards*/
     width: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   #restaurants-cards {
-    width: 80%;
+    width: 100%;
   }
   .restaurant__card {
-    margin-bottom: 3em;
-  }
-  .restaurant__card img {
-    height: 220px;
+    margin-bottom: 4em;
+    height: 300px;
+    width: 86%;
   }
   .restaurant__card .new {
     font-size: large;
@@ -879,6 +896,7 @@ section hr {
 /*ADAPTATION COMPUTER*/
 @media (min-width: 1400px) {
   #operation-cards {
+    /*all 3 operation cards*/
     width: 92%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -897,7 +915,6 @@ section hr {
     font-size: x-large;
   }
   #restaurants-cards {
-    width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -911,20 +928,20 @@ section hr {
     font-size: x-large;
     margin-bottom: 3%;
   }
-  .restaurant__card img {
-    height: 250px;
-  }
   .restaurant__card h4 {
     font-size: x-large;
+    padding-bottom: 0;
   }
   .restaurant__card i {
     font-size: xx-large;
   }
 }
 
-/* @use  "../utils/variables" as */
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;*/
 /*--------- CARDS (page "menu") ---------*/
-.all-cards {
+.menu__all-cards {
   /*box "carte" : 3 cards with names of the dishes*/
   width: 100%;
 }
@@ -934,7 +951,8 @@ section hr {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1em;
-  /*justify-content: space-between;*/
+  height: 70px;
+  width: 100%;
 }
 
 .menu__card--text {
@@ -946,14 +964,13 @@ section hr {
   -webkit-box-shadow: #c9c7c7 3px 3px 10px;
           box-shadow: #c9c7c7 3px 3px 10px;
   position: relative;
-  overflow: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 87% 13%;
       grid-template-columns: 87% 13%;
   /*2c et 2l*/
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   justify-items: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -975,11 +992,6 @@ section hr {
   text-overflow: ellipsis;
 }
 
-.menu__card--text h3:hover {
-  -webkit-animation: all 400ms;
-          animation: all 400ms;
-}
-
 .menu__card--text-detail {
   color: #353535;
   -ms-grid-column: 1;
@@ -994,11 +1006,7 @@ section hr {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.menu__card--text-detail:hover {
-  -webkit-animation: all 400ms;
-          animation: all 400ms;
+  width: 100%;
 }
 
 .menu__card--text-price {
@@ -1012,12 +1020,6 @@ section hr {
   grid-row: 2/3;
   /*second line*/
   padding-left: 10px;
-  -webkit-animation: all 400ms;
-          animation: all 400ms;
-}
-
-.menu__card--text i {
-  display: none;
 }
 
 /* ADAPTATION I-PAD*/
@@ -1026,6 +1028,7 @@ section hr {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 85px;
   }
   .menu__card--text {
     /*title + composition + price*/
@@ -1045,6 +1048,9 @@ section hr {
 
 /* ADAPTATION COMPUTER*/
 @media (min-width: 1400px) {
+  .menu__card {
+    height: 104px;
+  }
   .menu__card--text {
     width: 60%;
     -ms-grid-columns: 90% 10%;
@@ -1059,13 +1065,14 @@ section hr {
   }
 }
 
-/* @use  "../utils/variables" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;*/
 /*---------MENU progressive apparition*-----------*/
 .section__menu--first {
   -webkit-animation-name: dishVisuel;
           animation-name: dishVisuel;
-  -webkit-animation-duration: 600ms;
-          animation-duration: 600ms;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
   -webkit-animation-fill-mode: backwards;
@@ -1073,36 +1080,26 @@ section hr {
 }
 
 .section__menu--second {
-  -webkit-animation: dishVisuel 600ms 1.2s backwards;
-          animation: dishVisuel 600ms 1.2s backwards;
+  -webkit-animation: dishVisuel 500ms 1.2s backwards;
+          animation: dishVisuel 500ms 1.2s backwards;
 }
 
 .section__menu--third {
-  -webkit-animation: dishVisuel 600ms 1.4s backwards;
-          animation: dishVisuel 600ms 1.4s backwards;
+  -webkit-animation: dishVisuel 500ms 1.4s backwards;
+          animation: dishVisuel 500ms 1.4s backwards;
 }
 
-/* @use  "../utils/variables" as */
-/* @use  "../utils/mixins" as */
-/* @use  "../utils/keyframes"" as */
+/*@use  "../utils/variables" as *;
+@use  "../utils/mixins" as *;
+@use  "../utils/keyframes" as *;*/
 /*---------validation : formatting-----------*/
-/*icone in _mixins.scss : @mixin validation-icone-format */
-/*position in _mixins.scss : @mixin validation-box */
+/*ICONE in _mixins.scss :
+ @mixin validation-icone-format */
 /*-------- box validation : animation----------*/
-/*.menu__card--validation{
-    /*voir dans _menu-cards*/
-/*display: none;
-    width: 0;
-    transform: display 1s ease-in-out;
-    /*@include validation-box();*/
-/*&:hover{ /*rotation*/
-/* @include validation-icone-format();
-        transform: rotate(360deg);
-        animation: transform 1s ease-in ;*/
-/* }*/
-/*}*/
-.menu__card--validation i {
-  display: none;
+.menu__card--validation {
+  /*box validation*/
+  opacity: 0;
+  width: 0;
 }
 
 .menu__card:hover {
@@ -1111,9 +1108,11 @@ section hr {
 }
 
 .menu__card:hover .menu__card--text {
-  width: 70%;
+  width: 80%;
   border-radius: 15px 0 0 15px;
-  /*border: 3px red solid; /*a effacer*/
+  -webkit-transition: linear width 400ms;
+  transition: linear width 400ms;
+  /* width progressive modification*/
 }
 
 .menu__card:hover .menu__card--text h3 {
@@ -1123,7 +1122,15 @@ section hr {
   text-overflow: ellipsis;
 }
 
+.menu__card:hover .menu__card--text .menu__card--text-detail {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0;
+}
+
 .menu__card:hover .menu__card--validation {
+  /*validation box*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1134,26 +1141,31 @@ section hr {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 0 15px 15px 0;
-  height: 82px;
-  width: 10%;
+  height: 70px;
+  width: 20%;
   background-color: #99E2D0;
+  -webkit-transition: linear width 400ms;
+  transition: linear width 400ms;
+  /* width progressive modification*/
+  opacity: 1;
 }
 
 .menu__card:hover .menu__card--validation i {
+  /*icone check*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-animation: elementRotation 1s both;
           animation: elementRotation 1s both;
   color: white;
-  /*background-color:$color-tertiary-light;*/
   border-radius: 0 15px 15px 0;
-  width: 10%;
-  height: 100%;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1163,9 +1175,33 @@ section hr {
   font-size: x-large;
 }
 
-/* @use  "../utils/variables" as *;à rajouter*/
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  .menu__card:hover .menu__card--text {
+    width: 70%;
+  }
+  .menu__card:hover .menu__card--validation {
+    width: 10%;
+    height: 85px;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  .menu__card:hover .menu__card--text {
+    width: 50%;
+  }
+  .menu__card:hover .menu__card--validation {
+    height: 104px;
+    width: 10%;
+  }
+}
+
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
 /*BUTTON  (class for page "accueil" and <button> for page"menu") */
-.button, button {
+a.button, button {
   position: relative;
   height: 50px;
   margin: 1em 0 3em 0;
@@ -1176,14 +1212,16 @@ section hr {
   border-radius: 2em;
   -webkit-box-shadow: #7e7e7e 3px 3px 10px;
           box-shadow: #7e7e7e 3px 3px 10px;
-  /*à revoir avec gris plus clair(D +Bas + diffus)*/
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row nowrap;
-      -ms-flex-positive: row nowrap;
-          flex-grow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1196,13 +1234,12 @@ section hr {
   transition: box-shadow ease-in-out 400ms, -webkit-box-shadow ease-in-out 400ms;
 }
 
-.button:hover, .button :active, .button :visited, button:hover, button :active, button :visited {
+a.button:hover, a.button :active, a.button :visited, button:hover, button :active, button :visited {
   /*button lighter with larger shadow*/
   background: -webkit-gradient(linear, left top, left bottom, from(#fd8ce9), to(#b487eb));
   background: linear-gradient(#fd8ce9, #b487eb);
   -webkit-box-shadow: #eaeaea 0 3px 3px 15px;
           box-shadow: #eaeaea 0 3px 3px 15px;
-  /*à revoir*/
   color: white;
 }
 
@@ -1214,7 +1251,7 @@ button {
 
 /* ADAPTATION I-PAD*/
 @media (min-width: 768px) {
-  .button, button {
+  a.button, button {
     height: 60px;
     font-size: large;
   }
@@ -1222,30 +1259,36 @@ button {
 
 /* ADAPTATION COMPUTER*/
 @media (min-width: 1400px) {
-  .button, button {
+  a.button, button {
     height: 85px;
     font-size: x-large;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
   }
 }
 
-/* @use  "../utils/variables" as *;à rajouter*/
-/* @use  "../utils/mixins" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
 /*---------Icone heart : formatting*-----------/
 
 /* composition in _mixins.scss :@mixin heart-format() */
-/*PAGE "ACCUEIL" :@include heart-format() dans  _accueil-cards.scss  */
-/*PAGES "MENU" : @include heart-format() dans _menu.scss*/
+/*PAGE "ACCUEIL" 
+:@include heart-format() dans  _accueil-cards.scss */
+/*PAGES "MENU" : 
+@include heart-format() dans _menu.scss */
 /*---------Icone heart : animation------------*/
 /* composition in _mixins.scss : @mixin heart-animation();  */
 .full {
+  /* icone heart full (=.fas)*/
   opacity: 0;
 }
 
 .full:hover, .full:active {
-  /*background-size: 100%;*/
   color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   background-image: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-textfield-color: transparent;
   -webkit-transition: all 400ms;
@@ -1254,19 +1297,16 @@ button {
   cursor: pointer;
 }
 
-/* @use  "../utils/variables" as */
-/*---------LOADER : formatting*-----------*/
-/*à effacer
-header, main, footer{
-    display: none;
-}*/
+/*@use "../utils/" as *;
+@use "../base/" as *;*/
+/*---------LOADER : formatting and rotation-----------*/
 .loader {
   position: absolute;
   width: 150px;
   height: 150px;
   font-family: Shrikhand;
   color: #9356DC;
-  border: 13px solid #FF79DA;
+  border: 15px solid #FF79DA;
   border-radius: 150px;
   border-bottom: 15px solid #99E2D0;
   border-top: 15px solid #99E2D0;
@@ -1281,17 +1321,18 @@ header, main, footer{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 2;
-  /*va avec apparition progressive de la page*/
   -webkit-animation-name: elementRotation;
           animation-name: elementRotation;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-transition: elementRotation 1s ease-in-out;
   transition: elementRotation 1s ease-in-out;
 }
 
+/*---------LOADER : disparition-----------*/
 .loader-animation {
+  z-index: 2;
+  /*loader first*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1303,17 +1344,33 @@ header, main, footer{
           align-items: center;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   background-color: #f6f6f6;
   -webkit-animation-name: loaderEnd;
           animation-name: loaderEnd;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
-  /*tps au bout duquel l'anim commence*/
   -webkit-animation-duration: 400ms;
           animation-duration: 400ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   /*valeurs appliquées av et ap animation : derniere étape soit opacity 0 et z-1*/
+}
+
+/* ADAPTATION I-PAD*/
+@media (min-width: 768px) {
+  .loader {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width: 1400px) {
+  .loader {
+    width: 250px;
+    height: 250px;
+    font-size: larger;
+  }
 }
 /*# sourceMappingURL=style.css.map */

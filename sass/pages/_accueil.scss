@@ -1,5 +1,11 @@
-/*@use "../utils/" as *;*/
-/*-----Page progressive visualisation----*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;
+@use "../layouts/" as *;*/
+
+/*MOBILE VERSION*/
+
+/*-----Page "Accueil"progressive visualisation----*/
 
 header, main, footer{
   
@@ -7,30 +13,29 @@ header, main, footer{
 }
 
 /*---------LOCALISATION PART---------*/
-#localisation {
+
+#localisation { /*localisation box*/
     @include element-center();
     background-color: $color-grey2;
     box-shadow: inset $color-grey3 0px 4px 4px -3px;
-    /*width: 100%;*/ /*provoque debordement*/
     height: 3em;
 
-    i {
+    i { /*icone map*/
         padding-left: 3em;
     }
 
-    input{
+    input{ /*localisation text*/
         background-color: $color-grey2;
         border: none;
         padding-left: 1em;
-        font-weight: bold;
-        
+        font-weight: bold;    
     }
 }
 
 
 /*---------INFORMATION PART---------*/
-#information {
-    @include element-center($direction: column); /*trouver pourquoi $direction ne fctionne pas*/
+#information { /*information box*/
+    @include element-center(); 
     flex-direction: column;
     background-color: $color-grey1;
     padding: 1em 2.5em 0.5em 2.5em;
@@ -47,7 +52,6 @@ header, main, footer{
         margin-bottom: 1em;
         color: $color-grey4;
         font-size: 17px;
-
     }   
 }
 
@@ -55,10 +59,9 @@ header, main, footer{
 /*---------BOX OPERATION + BOX RESTAURANTS---------*/
 
 #operation-cards, #restaurants-cards{ 
-    @include element-center($wrap:wrap);/*même pb que pour $direction plus haut*/
+    @include element-center();
     flex-direction: column;
     margin: 0 1.5em; 
-
 }
 
 #operation-cards{
@@ -70,13 +73,13 @@ header, main, footer{
 }
 
 
-#restaurants-box {
+#restaurants-box { /*title + all restaurant-card*/
     background-color: $color-grey1;
     padding-top: 0.5em;
     padding-bottom: 3em;
     margin: 2em 0 0 0;
-
-
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -103,31 +106,8 @@ header, main, footer{
             align-self: start;
         }
     }
-
-    /*#operation-cards{
-        width: 60%;
-        display: flex;       
-
-    }
-
-    #restaurants-cards{
-        width: 80%;
-    }
-
-    .restaurant__card{
-        font-size: large;
-
-        &--text{
-            h4{
-                font-size: x-large; /*ne fonctionne pas pq?*/
-            /*}
-
-            p, i{
-                font-size: large;
-            }
-        /*}
-    /*}*/
 }
+
 
 /*ADAPTATION COMPUTER*/
 @media (min-width:1400px){

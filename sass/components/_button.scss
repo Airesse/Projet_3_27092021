@@ -1,7 +1,9 @@
-/* @use  "../utils/variables" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
 
 /*BUTTON  (class for page "accueil" and <button> for page"menu") */
-.button, button{    
+a.button, button{    
     position: relative;
     height: 50px;
     margin: 1em 0 3em 0;
@@ -9,7 +11,7 @@
     background: linear-gradient($color-secondary, $color-primary);
     border: none;
     border-radius: 2em;
-    box-shadow: $color-grey3 3px 3px 10px;    /*à revoir avec gris plus clair(D +Bas + diffus)*/
+    box-shadow: $color-grey3 3px 3px 10px;    
     color: white;
     @include element-center();
     transition: box-shadow ease-in-out 400ms;
@@ -18,7 +20,7 @@
 
     &:hover, :active, :visited{ /*button lighter with larger shadow*/
         background: linear-gradient($color-secondary-light, $color-primary-light );
-        box-shadow: $color-grey2 0 3px 3px 15px; /*à revoir*/
+        box-shadow: $color-grey2 0 3px 3px 15px; 
         color: white;
     }
 }
@@ -27,8 +29,7 @@
 
 button{
     margin: 1.5em 0 2.7em 0;
-    padding: 0 3em;
-    
+    padding: 0 3em;    
 }
 
 
@@ -39,7 +40,7 @@ button{
 /* ADAPTATION I-PAD*/
 
 @media (min-width:768px){
-    .button, button{
+    a.button, button{
         height: 60px;
         font-size: large;
         
@@ -49,9 +50,10 @@ button{
 /* ADAPTATION COMPUTER*/
 
 @media (min-width:1400px){
-    .button, button{
+    a.button, button{
         height: 85px;
         font-size: x-large;
-        
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
     }
 }

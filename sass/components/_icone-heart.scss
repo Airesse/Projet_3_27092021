@@ -1,15 +1,15 @@
-/* @use  "../utils/variables" as *;à rajouter*/
-/* @use  "../utils/mixins" as *;à rajouter*/
-
-
-
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
 
 
 /*---------Icone heart : formatting*-----------/
 
 /* composition in _mixins.scss :@mixin heart-format() */
-/*PAGE "ACCUEIL" :@include heart-format() dans  _accueil-cards.scss  */
-/*PAGES "MENU" : @include heart-format() dans _menu.scss*/
+/*PAGE "ACCUEIL" 
+:@include heart-format() dans  _accueil-cards.scss */
+/*PAGES "MENU" : 
+@include heart-format() dans _menu.scss */
 
 
 
@@ -19,7 +19,7 @@
 
 /* composition in _mixins.scss : @mixin heart-animation();  */
 
-.full{
+.full { /* icone heart full (=.fas)*/
     opacity: 0;  
 }
  

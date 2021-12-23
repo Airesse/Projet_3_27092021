@@ -1,12 +1,13 @@
-/*@use "../utils/variables" as *;*/
+/*@use "../utils/variables" as *;
+@use "../utils/keyframes" as *;*/
 
 /*element position*/
-@mixin element-center($direction: row, $wrap: nowrap, $justify: center, $align: center) {
+@mixin element-center() {
     display: flex;
-    flex-grow: $direction $wrap;
-    justify-content: $justify;
-    align-items: $align;
-  
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /* icone heart : formatting*/
@@ -16,44 +17,28 @@
     font-size: 24px;
     margin-right: 0.5em;
     color: $color-grey3;
-
 }
 
 @mixin heart-animation(){
-    
-    /*background-size: 100%;*/
     color: transparent;
     background-image: linear-gradient($color-primary, $color-secondary);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-textfield-color: transparent;
     transition: all 400ms;
     opacity: 1;
     cursor: pointer;
-
 }
 
 
 
 /* icone validation : formatting*/
 @mixin validation-icone-format(){
-
     color: white;
-    /*background-color:$color-tertiary-light;*/
     border-radius: 0 15px 15px 0;
-    width: 10%;
-    height: 100%;
     @include element-center();
     font-size: x-large;
-    
-
 }
 
-/*@mixin validation-box(){*/
-    /*background-color: $color-tertiary-light;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
+
     
-}*/

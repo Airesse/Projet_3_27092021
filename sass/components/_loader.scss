@@ -1,13 +1,8 @@
-/* @use  "../utils/variables" as */
+/*@use "../utils/" as *;
+@use "../base/" as *;*/
 
-/*---------LOADER : formatting*-----------*/
 
-
-/*à effacer
-header, main, footer{
-    display: none;
-}*/
-
+/*---------LOADER : formatting and rotation-----------*/
 
 .loader{
     position:absolute;
@@ -15,7 +10,7 @@ header, main, footer{
     height: 150px;
     font-family: Shrikhand;
     color: $color-primary;
-    border: 13px solid $color-secondary;
+    border: 15px solid $color-secondary;
     border-radius: 150px;
     border-bottom: 15px solid $color-tertiary-light;
     border-top: 15px solid $color-tertiary-light;
@@ -23,28 +18,43 @@ header, main, footer{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    z-index: 2; /*va avec apparition progressive de la page*/
     animation-name: elementRotation;
-    animation-duration: 1s;
-    
+    animation-duration: 3s;
     transition: elementRotation 1s ease-in-out ;
-
 }
 
 
-
+/*---------LOADER : disparition-----------*/
 
 .loader-animation{
+    z-index: 2; /*loader first*/
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     background-color: $color-grey1;
     animation-name: loaderEnd;
-    animation-delay: 2s; /*tps au bout duquel l'anim commence*/
+    animation-delay: 2s;
     animation-duration: 400ms;
     animation-fill-mode: forwards; 
     /*valeurs appliquées av et ap animation : derniere étape soit opacity 0 et z-1*/
+}
+
+/* ADAPTATION I-PAD*/
+@media (min-width:768px){
+    .loader{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+    .loader{
+        width: 250px;
+        height: 250px;
+        font-size: larger;
+    }
 }

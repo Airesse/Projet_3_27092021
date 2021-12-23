@@ -1,20 +1,21 @@
-/* @use  "../utils/variables" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;*/
+
 
 /*---------MENU progressive apparition*-----------*/
 
 .section__menu--first{
     animation-name: dishVisuel;
-    animation-duration: 600ms;
+    animation-duration: 500ms;
     animation-delay: 1s;
-    animation-fill-mode: backwards;
-    
+    animation-fill-mode: backwards;    
 }
 
 .section__menu--second{
-    animation: dishVisuel 600ms 1.2s backwards;
+    animation: dishVisuel 500ms 1.2s backwards;
 }
 
 .section__menu--third{
-    animation: dishVisuel 600ms 1.4s backwards;
+    animation: dishVisuel 500ms 1.4s backwards;
 }
 

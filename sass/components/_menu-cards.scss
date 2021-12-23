@@ -1,17 +1,19 @@
-/* @use  "../utils/variables" as */
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;*/
 
 /*--------- CARDS (page "menu") ---------*/
 
 
-.all-cards{ /*box "carte" : 3 cards with names of the dishes*/
+.menu__all-cards{ /*box "carte" : 3 cards with names of the dishes*/
     width: 100%;
 }
 
 .menu__card{
     display: flex;
     margin-bottom: 1em;
-    /*justify-content: space-between;*/
-    
+    height: 70px;
+    width: 100%;   
 
     &--text{ /*title + composition + price*/
         width: 100%;
@@ -21,12 +23,10 @@
         box-shadow: $color-grey5 3px 3px 10px;
     
         position: relative;
-        overflow: hidden;
         
-
         display: grid;
         grid-template-columns: 87% 13%; /*2c et 2l*/
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 1fr;    
         justify-items: start;
         align-items: center;
 
@@ -37,12 +37,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-
-
-            &:hover{
-                animation: all 400ms;
-             
-            }
         }
     
         &-detail{
@@ -53,35 +47,23 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-
-            &:hover{
-
-                animation: all 400ms;
-            }
+            width: 100%;
         }
     
         &-price{
-    
             font-weight: bold;
             grid-column: 2/3; /*second column*/
             grid-row: 2/3;  /*second line*/
-            padding-left: 10px;
-            animation: all 400ms;
-
+            padding-left: 10px;    
         }
-        i{
-            display: none;
-        }
-        
-    }
-
-        
+    }        
 }
 
 /* ADAPTATION I-PAD*/
 @media (min-width:768px){
     .menu__card{
         justify-content: center;
+        height: 85px;
     
         &--text{ /*title + composition + price*/
             width: 80%;
@@ -101,6 +83,9 @@
 
 /* ADAPTATION COMPUTER*/
 @media (min-width:1400px){
+    .menu__card{
+        height: 104px;
+    }
 
     .menu__card--text{    
         width: 60%;

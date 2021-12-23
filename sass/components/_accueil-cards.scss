@@ -1,7 +1,12 @@
-/* @use  "../utils/variables" as *;à rajouter*/
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../layouts/" as *;*/
 
+
+/*VERSION MOBILE*/
 /*--------- CARDS (page : "accueil")---------*/
 
+/*PART OPERATION*/
 .operation__card{
     @include element-center();
     justify-content: flex-start;
@@ -13,7 +18,7 @@
     border-radius: 1.2em;
     box-shadow: $color-grey5 3px 3px 10px;
     
-    &--number{ 
+    &--number{ /*number in a circle*/
         @include element-center();
         margin: 0 1.5em 0 -1.5em;
 
@@ -29,7 +34,7 @@
        
     }
 
-    i{/*icone in a circle*/
+    i{ /*icones : mobile, list, shop*/
         margin-right: 1em;
         color: $color-grey3;
         font-size: 18px;
@@ -40,35 +45,47 @@
     }
 }
 
+/*PART RESTAURANTS*/
+#restaurant__cards{
+    width: 100%
+}
+
 .restaurant__card{
     
     @include element-center();
     flex-direction: column;
     position: relative;
     width: 100%;
+    height: 250px;
     background-color: white;
     border-radius: 20px;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     padding-bottom: 0.5em;
-    box-shadow: $color-grey5 3px 3px 10px;    
+    box-shadow: $color-grey5 3px 3px 10px;
+    
+    a{
+        height: 75%;
+        width: 100%;
+    }
 
     img{
         @include element-center();
-        height: 170px;
+        height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 20px 20px 0 0;
     }
 
-    &--text{
+    &--text{ /* title + subtitle + icone heart*/
         display: grid;
+        height: 25%;
         width: 100%;
-        padding: 0.9em 0.9em 0 0.9em;
-        grid-template-columns: 50% 50%; /*2l et 2c*/
+        padding: 0.9em 0.9em 0.4em 0.9em;
+        grid-template-columns: 90% 10%; /*2l et 2c*/
         grid-template-rows: 50% 50%;
     }
 
-    h4{
+    h4{ /*title: restaurant's name*/
         grid-column: 1/2; /*first column*/
         grid-row: 1/2;  /*first line*/
         padding-bottom: 0.5em;
@@ -76,16 +93,15 @@
         font-size: 17px;
     }
 
-    p{
+    p{ /*subtites: localisation restaurant*/
         grid-column: 1/2; /*first column*/
         grid-row: 2/3;  /*second line*/
     }
 
     i{ /*icone heart*/
-        grid-column: 2/3; /*second column */
-        grid-row: 1/2; /* first line*/
-        @include heart-format ();
-
+        grid-column: 2/3; /*second column*/
+        grid-row: 1/2; /*first line*/
+        @include heart-format ();    
     }
 }
 
@@ -107,20 +123,20 @@
 /*ADAPTATION I-PAD*/
 @media (min-width:768px){
 
-    #operation-cards{
+    #operation-cards{/*all 3 operation cards*/
         width: 60%;
         display: flex;       
     }
 
     #restaurants-cards{
-        width: 80%;
+        width: 100%;
     }
 
     .restaurant__card{
-        margin-bottom: 3em;
-        img{
-            height: 220px;
-        }
+        margin-bottom: 4em;
+        height: 300px;
+        width: 86%;
+        
 
         .new{
             font-size: large;
@@ -142,7 +158,7 @@
 /*ADAPTATION COMPUTER*/
 @media (min-width:1400px){
 
-    #operation-cards{
+    #operation-cards{/*all 3 operation cards*/
         width: 92%;
         flex-direction: row;
         gap: 3%;    
@@ -162,7 +178,6 @@
     }
 
     #restaurants-cards{
-        width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 3%;
@@ -173,12 +188,9 @@
         font-size: x-large;
         margin-bottom: 3%;
 
-        img{
-            height: 250px;
-        }
-
         h4{
             font-size: x-large;
+            padding-bottom: 0;
         }
 
         i{

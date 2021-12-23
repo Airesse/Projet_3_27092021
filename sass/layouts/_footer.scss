@@ -1,4 +1,8 @@
-/*@use "../utils/" as *;*/
+
+/*@use "../utils/" as *;
+@use "../base/" as *;
+@use "../components/" as *;*/
+
 
 footer{
     background-color: $color-grey4;
@@ -18,12 +22,9 @@ footer{
 
         /*link position*/
         a{
-            /*margin-bottom: 0;/*ne fonctionne pas!*/
-
             &:hover{
                 color: $color-secondary;
             }
-
         } 
     }
 

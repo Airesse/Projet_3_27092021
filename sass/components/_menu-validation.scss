@@ -1,41 +1,29 @@
-/* @use  "../utils/variables" as */
-/* @use  "../utils/mixins" as */
-/* @use  "../utils/keyframes"" as */
+/*@use  "../utils/variables" as *;
+@use  "../utils/mixins" as *;
+@use  "../utils/keyframes" as *;*/
 
 /*---------validation : formatting-----------*/
-/*icone in _mixins.scss : @mixin validation-icone-format */
-/*position in _mixins.scss : @mixin validation-box */
+/*ICONE in _mixins.scss :
+ @mixin validation-icone-format */
 
 
 /*-------- box validation : animation----------*/
 
-/*.menu__card--validation{
-    /*voir dans _menu-cards*/
-    /*display: none;
-    width: 0;
-    transform: display 1s ease-in-out;
-    /*@include validation-box();*/
-            
-    /*&:hover{ /*rotation*/
-       /* @include validation-icone-format();
-        transform: rotate(360deg);
-        animation: transform 1s ease-in ;*/
-        
-   /* }*/
-/*}*/
 
-.menu__card--validation i{
-    display: none;
+.menu__card--validation{ /*box validation*/
+    opacity: 0;
+    width: 0;
 }
+
 
 .menu__card:hover{
     border-radius: 15px;
     cursor: pointer;
 
     .menu__card--text{
-        width: 70%;
-        border-radius: 15px 0 0 15px;
-        /*border: 3px red solid; /*a effacer*/
+        width: 80%;
+        border-radius: 15px 0 0 15px;    
+        transition: linear width 400ms;/* width progressive modification*/
 
         h3{
             width: 100%;
@@ -43,26 +31,69 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+       .menu__card--text-detail{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 0;   
+        }
     }
 
-    .menu__card--validation{
+    .menu__card--validation{/*validation box*/
         display: flex;
         align-self: center;
         justify-self: center;
         justify-content: center;
         border-radius: 0 15px 15px 0;
-        height: 82px;
-        width: 10%;
+        height: 70px;
+        width: 20%;
         background-color: $color-tertiary-light;
-       
+        transition: linear width 400ms; /* width progressive modification*/
+        opacity: 1;
 
-        i{
-           display: flex;
-           animation: elementRotation 1s both;
-           @include validation-icone-format();
-           
-
-                       
+        i{/*icone check*/
+        display: flex;
+        animation: elementRotation 1s both;
+        @include validation-icone-format();                                  
         }
     }
+} 
+
+
+
+
+
+
+
+
+/* ADAPTATION I-PAD*/
+@media (min-width:768px){
+    .menu__card:hover{        
+
+        .menu__card--text{
+            width: 70%;            
+        }
+
+        .menu__card--validation{
+            width: 10%;
+            height: 85px;
+        }
+    } 
+}  
+
+
+/* ADAPTATION COMPUTER*/
+@media (min-width:1400px){
+    .menu__card:hover{
+    
+        .menu__card--text{
+            width: 50%;
+        }
+    
+        .menu__card--validation{
+            height: 104px;
+            width: 10%;
+        }
+    } 
 }
