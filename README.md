@@ -1,7 +1,7 @@
 PROJET OPENCLASSROOMS N°3 - OHMYFOOD
 
 
-    Lien vers le site du projet : https://Airesse.github.io/StephanieRoi_3_27092021/
+    Lien vers le site du projet : https://airesse.github.io/StephanieRoi_3_27092021/
 
 
 I. Scénario du projet :
