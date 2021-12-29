@@ -7,9 +7,10 @@ PROJET OPENCLASSROOMS N°3 - OHMYFOOD
 I. Scénario du projet :
 
     Ohmyfood! est une entreprise de commande de repas en ligne à partir de menus de restaurants gastronomiques.
-    Son service haut de gamme permet à ses utilisateurs de composer leur propre menu et de réduire leur temps d’attente dans les
-    restaurants car leur menu est préparé à l’avance. 
-    Le public visé sont les classes moyennes et supérieures, connectées et souvent pressées, d'où une approche mobile first du site.
+    Son service haut de gamme permet à ses utilisateurs de composer leur propre menu. 
+    Et de réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. 
+    Le public visé sont les classes moyennes et supérieures, connectées et souvent pressées. 
+    D'où une approche mobile first du site.
 
 II. Éléments fournis :
 
@@ -23,7 +24,6 @@ III. Livrables attendus :
     
         1.1 Page d’accueil (x1)
                 ● Affichage de la localisation des restaurants.
-                  À terme il sera possible de choisir sa localisation pour trouver des restaurants proches d’un certain lieu.
                 ● Une courte présentation de l’entreprise.
                 ● Une section contenant les 4 menus sous forme cartes.
                   Au clic sur la carte, l’utilisateur est redirigé vers la page du menu.
