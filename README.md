@@ -1,10 +1,10 @@
-PROJET OPENCLASSROOMS N°3 - OHMYFOOD
+# PROJET OPENCLASSROOMS N°3 - OHMYFOOD
 
 
-    Lien vers le site du projet : https://airesse.github.io/StephanieRoi_3_27092021/
+  ### Lien vers le site du projet : https://airesse.github.io/StephanieRoi_3_27092021/
 
 
-I. Scénario du projet :
+## I. Scénario du projet :
 
     Ohmyfood! est une entreprise de commande de repas en ligne à partir de menus de restaurants gastronomiques.
     Son service haut de gamme permet à ses utilisateurs de composer leur propre menu. 
@@ -12,15 +12,15 @@ I. Scénario du projet :
     Le public visé sont les classes moyennes et supérieures, connectées et souvent pressées. 
     D'où une approche mobile first du site.
 
-II. Éléments fournis :
+## II. Éléments fournis :
 
     1. Maquettes de la version mobile
     2. Identité graphique
     3. Images
 
-III. Livrables attendus :
+## III. Livrables attendus :
 
-    1. Contenus des pages
+   ### 1. Contenus des pages
     
         1.1 Page d’accueil (x1)
                 ● Affichage de la localisation des restaurants.
@@ -40,7 +40,7 @@ III. Livrables attendus :
                 ● Sur la page d’accueil, il contient le logo du site.
                 ● Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil
     
-    2. Effets graphiques et animations
+   ### 2. Effets graphiques et animations
     
     Les effets accessibles au clic ou au survol sont visibles sur la maquette. 
     Ils devront utiliser les animations ou transitions CSS, pas de JavaScript ni de librairie.
