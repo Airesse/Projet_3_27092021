@@ -1,12 +1,9 @@
 @charset "UTF-8";
 /*COLORS*/
 /*shadow cards "accueil"*/
-/*@use "../utils/variables" as *;
-@use "../utils/keyframes" as *;*/
 /*element position*/
 /* icone heart : formatting*/
 /* icone validation : formatting*/
-/*@use "../utils/variables" as *;*/
 /*-----loader disparition----*/
 @-webkit-keyframes loaderEnd {
   from {
@@ -93,9 +90,7 @@
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../components/" as *;*/
+/*MOBILE VERSION*/
 /*LOGO "ohmyfood"*/
 header {
   display: -webkit-box;
@@ -182,9 +177,7 @@ header a i {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../components/" as *;*/
+/*MOBILE VERSION*/
 footer {
   background-color: #353535;
   color: white;
@@ -292,10 +285,6 @@ p {
   font-weight: 300;
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../components/" as *;
-@use "../layouts/" as *;*/
 /*MOBILE VERSION*/
 /*-----Page "Accueil"progressive visualisation----*/
 header, main, footer {
@@ -462,10 +451,7 @@ header, main, footer {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../components/" as *;
-@use "../layouts/" as *;*/
+/*MOBILE VERSION */
 .restaurant--image {
   position: relative;
   display: -webkit-box;
@@ -655,10 +641,7 @@ section hr {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../layouts/" as *;*/
-/*VERSION MOBILE*/
+/*MOBILE VERSION*/
 /*--------- CARDS (page : "accueil")---------*/
 /*PART OPERATION*/
 .operation__card {
@@ -937,9 +920,7 @@ section hr {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../components/" as *;*/
+/*MOBILE VERSION*/
 /*--------- CARDS (page "menu") ---------*/
 .menu__all-cards {
   /*box "carte" : 3 cards with names of the dishes*/
@@ -1065,8 +1046,7 @@ section hr {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;*/
+/*MOBILE VERSION*/
 /*---------MENU progressive apparition*-----------*/
 .section__menu--first {
   -webkit-animation-name: dishVisuel;
@@ -1089,9 +1069,7 @@ section hr {
           animation: dishVisuel 500ms 1.4s backwards;
 }
 
-/*@use  "../utils/variables" as *;
-@use  "../utils/mixins" as *;
-@use  "../utils/keyframes" as *;*/
+/*MOBILE VERSION*/
 /*---------validation : formatting-----------*/
 /*ICONE in _mixins.scss :
  @mixin validation-icone-format */
@@ -1197,9 +1175,7 @@ section hr {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../layouts/" as *;*/
+/*MOBILE VERSION*/
 /*BUTTON  (class for page "accueil" and <button> for page"menu") */
 a.button, button {
   position: relative;
@@ -1267,9 +1243,7 @@ button {
   }
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;
-@use "../layouts/" as *;*/
+/*MOBILE VERSION*/
 /*---------Icone heart : formatting*-----------/
 
 /* composition in _mixins.scss :@mixin heart-format() */
@@ -1297,8 +1271,7 @@ button {
   cursor: pointer;
 }
 
-/*@use "../utils/" as *;
-@use "../base/" as *;*/
+/*MOBILE VERSION*/
 /*---------LOADER : formatting and rotation-----------*/
 .loader {
   position: absolute;
