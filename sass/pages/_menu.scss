@@ -109,11 +109,15 @@ section{ /*BOX ENTREES" or DISHES or DESSERT */
         h2{
             font-size: large;
         }
+
+        hr{
+            width: 2.5em;
+        }
     }
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width:1400px){
+@media (min-width:992px){
     .restaurant--image{
         height: 500px;
     }
@@ -131,6 +135,10 @@ section{ /*BOX ENTREES" or DISHES or DESSERT */
 
         h2 {
             font-size: x-large;
+        }
+
+        hr{
+            width: 3.5em;
         }
     }
 }

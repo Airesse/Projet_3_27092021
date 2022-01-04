@@ -41,6 +41,14 @@
     }
 }
 
+.operation__card:hover{    
+    background-color: $color-primary-background;
+
+    i{  /*icones : mobile, list, shop*/  
+        color: $color-primary;
+    }        
+}
+
 /*PART RESTAURANTS*/
 #restaurant__cards{
     width: 100%
@@ -152,10 +160,10 @@
 
 
 /*ADAPTATION COMPUTER*/
-@media (min-width:1400px){
+@media (min-width:992px){
 
     #operation-cards{/*all 3 operation cards*/
-        width: 92%;
+        width: 80%;
         flex-direction: row;
         gap: 3%;    
     }

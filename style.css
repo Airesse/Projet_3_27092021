@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /*COLORS*/
+/*operation cards"accueil" background :hover */
 /*shadow cards "accueil"*/
 /*element position*/
 /* icone heart : formatting*/
@@ -68,25 +69,25 @@
 @-webkit-keyframes dishVisuel {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 @keyframes dishVisuel {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
 }
 
@@ -167,7 +168,7 @@ header a i {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   header img {
     left: 38%;
   }
@@ -230,7 +231,7 @@ footer i {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   footer {
     padding-left: 3.5%;
   }
@@ -393,11 +394,6 @@ header, main, footer {
   margin-left: 2.5em;
 }
 
-#purple {
-  /*icone store in purple*/
-  color: #9356DC;
-}
-
 #restaurants-box {
   /*title + all restaurant-card*/
   background-color: #f6f6f6;
@@ -438,7 +434,7 @@ header, main, footer {
 }
 
 /*ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i {
     font-size: x-large;
   }
@@ -620,10 +616,13 @@ section hr {
   section h2 {
     font-size: large;
   }
+  section hr {
+    width: 2.5em;
+  }
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   .restaurant--image {
     height: 500px;
   }
@@ -638,6 +637,9 @@ section hr {
   }
   section h2 {
     font-size: x-large;
+  }
+  section hr {
+    width: 3.5em;
   }
 }
 
@@ -711,6 +713,15 @@ section hr {
 
 .operation__card #icone-mobile {
   font-size: 19px;
+}
+
+.operation__card:hover {
+  background-color: #f3e5f5;
+}
+
+.operation__card:hover i {
+  /*icones : mobile, list, shop*/
+  color: #9356DC;
 }
 
 /*PART RESTAURANTS*/
@@ -877,10 +888,10 @@ section hr {
 }
 
 /*ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   #operation-cards {
     /*all 3 operation cards*/
-    width: 92%;
+    width: 80%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -934,6 +945,9 @@ section hr {
   margin-bottom: 1em;
   height: 70px;
   width: 100%;
+  -webkit-box-shadow: #c9c7c7 3px 3px 10px;
+          box-shadow: #c9c7c7 3px 3px 10px;
+  border-radius: 15px;
 }
 
 .menu__card--text {
@@ -942,8 +956,6 @@ section hr {
   background-color: white;
   border-radius: 15px;
   padding: 0.8em;
-  -webkit-box-shadow: #c9c7c7 3px 3px 10px;
-          box-shadow: #c9c7c7 3px 3px 10px;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -1005,15 +1017,30 @@ section hr {
 
 /* ADAPTATION I-PAD*/
 @media (min-width: 768px) {
+  .menu__all-cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .menu__card {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     height: 85px;
+    width: 80%;
   }
   .menu__card--text {
     /*title + composition + price*/
-    width: 80%;
     -ms-grid-columns: 90% 10%;
         grid-template-columns: 90% 10%;
     font-size: larger;
@@ -1028,12 +1055,12 @@ section hr {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   .menu__card {
     height: 104px;
+    width: 60%;
   }
   .menu__card--text {
-    width: 60%;
     -ms-grid-columns: 90% 10%;
         grid-template-columns: 90% 10%;
     font-size: x-large;
@@ -1076,8 +1103,46 @@ section hr {
 /*-------- box validation : animation----------*/
 .menu__card--validation {
   /*box validation*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0 15px 15px 0;
+  height: 70px;
+  background-color: #99E2D0;
   opacity: 0;
   width: 0;
+  -webkit-transition: linear all 400ms;
+  transition: linear all 400ms;
+  /*validation box animation return*/
+}
+
+.menu__card--validation i {
+  /*icone check*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: x-large;
 }
 
 .menu__card:hover {
@@ -1109,69 +1174,36 @@ section hr {
 
 .menu__card:hover .menu__card--validation {
   /*validation box*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-  justify-self: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 0 15px 15px 0;
-  height: 70px;
+  opacity: 1;
   width: 20%;
-  background-color: #99E2D0;
   -webkit-transition: linear width 400ms;
   transition: linear width 400ms;
   /* width progressive modification*/
-  opacity: 1;
 }
 
 .menu__card:hover .menu__card--validation i {
   /*icone check*/
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-animation: elementRotation 1s both;
           animation: elementRotation 1s both;
-  color: white;
-  border-radius: 0 15px 15px 0;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: x-large;
 }
 
 /* ADAPTATION I-PAD*/
 @media (min-width: 768px) {
-  .menu__card:hover .menu__card--text {
-    width: 70%;
+  .menu__card--validation {
+    height: 85px;
   }
   .menu__card:hover .menu__card--validation {
-    width: 10%;
     height: 85px;
   }
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
-  .menu__card:hover .menu__card--text {
-    width: 50%;
+@media (min-width: 992px) {
+  .menu__card--validation {
+    height: 104px;
   }
   .menu__card:hover .menu__card--validation {
     height: 104px;
-    width: 10%;
   }
 }
 
@@ -1234,7 +1266,7 @@ button {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   a.button, button {
     height: 85px;
     font-size: x-large;
@@ -1339,7 +1371,7 @@ button {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   .loader {
     width: 250px;
     height: 250px;

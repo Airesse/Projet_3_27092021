@@ -63,11 +63,6 @@ header, main, footer{
     margin-left: 2.5em;
 }
 
-#purple{ /*icone store in purple*/
-    color: $color-primary;
-}
-
-
 #restaurants-box { /*title + all restaurant-card*/
     background-color: $color-grey1;
     padding-top: 0.5em;
@@ -105,7 +100,7 @@ header, main, footer{
 
 
 /*ADAPTATION COMPUTER*/
-@media (min-width:1400px){
+@media (min-width:992px){
 
     #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i{
         font-size: x-large;
@@ -116,6 +111,7 @@ header, main, footer{
     }
 
     #restaurants-box, #operation-box{ 
+        
         h2{ /*titles "Fonctionnement" and "Restaurants"*/
             margin-left: 3.5%;
         }

@@ -9,8 +9,22 @@
 
 
 .menu__card--validation{ /*box validation*/
+
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    border-radius: 0 15px 15px 0;
+    height: 70px;
+    background-color: $color-tertiary-light;
     opacity: 0;
     width: 0;
+    transition: linear all 400ms;/*validation box animation return*/
+
+    i{/*icone check*/
+        display: flex;   
+        @include validation-icone-format();                                  
+    }
 }
 
 
@@ -22,7 +36,7 @@
         width: 80%;
         border-radius: 15px 0 0 15px;    
         transition: linear width 400ms;/* width progressive modification*/
-
+        
         h3{
             width: 100%;
             white-space: nowrap;
@@ -39,21 +53,12 @@
     }
 
     .menu__card--validation{/*validation box*/
-        display: flex;
-        align-self: center;
-        justify-self: center;
-        justify-content: center;
-        border-radius: 0 15px 15px 0;
-        height: 70px;
-        width: 20%;
-        background-color: $color-tertiary-light;
-        transition: linear width 400ms; /* width progressive modification*/
         opacity: 1;
-
+        width: 20%;
+        transition: linear width 400ms; /* width progressive modification*/
+       
         i{/*icone check*/
-        display: flex;
-        animation: elementRotation 1s both;
-        @include validation-icone-format();                                  
+        animation: elementRotation 1s both;                                
         }
     }
 } 
@@ -67,31 +72,28 @@
 
 /* ADAPTATION I-PAD*/
 @media (min-width:768px){
-    .menu__card:hover{        
-
-        .menu__card--text{
-            width: 70%;            
-        }
-
-        .menu__card--validation{
-            width: 10%;
+    .menu__card--validation{        
+        height: 85px;
+    }  
+    
+    .menu__card:hover{
+        .menu__card--validation{        
             height: 85px;
-        }
-    } 
+        } 
+    }
 }  
 
 
 /* ADAPTATION COMPUTER*/
-@media (min-width:1400px){
+@media (min-width:992px){
+
+    .menu__card--validation{        
+        height: 104px;
+    } 
+
     .menu__card:hover{
-    
-        .menu__card--text{
-            width: 50%;
-        }
-    
-        .menu__card--validation{
+        .menu__card--validation{        
             height: 104px;
-            width: 10%;
-        }
+        } 
     } 
 }
