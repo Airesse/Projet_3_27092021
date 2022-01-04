@@ -168,7 +168,7 @@ header a i {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   header img {
     left: 38%;
   }
@@ -231,7 +231,7 @@ footer i {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   footer {
     padding-left: 3.5%;
   }
@@ -434,7 +434,7 @@ header, main, footer {
 }
 
 /*ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   #localisation, #information, #operation-box, #restaurants-box, .operation__card, .operation__card--number, .operation__card i {
     font-size: x-large;
   }
@@ -622,7 +622,7 @@ section hr {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   .restaurant--image {
     height: 500px;
   }
@@ -888,7 +888,7 @@ section hr {
 }
 
 /*ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   #operation-cards {
     /*all 3 operation cards*/
     width: 80%;
@@ -1055,7 +1055,7 @@ section hr {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   .menu__card {
     height: 104px;
     width: 60%;
@@ -1198,7 +1198,7 @@ section hr {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   .menu__card--validation {
     height: 104px;
   }
@@ -1266,7 +1266,7 @@ button {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   a.button, button {
     height: 85px;
     font-size: x-large;
@@ -1371,7 +1371,7 @@ button {
 }
 
 /* ADAPTATION COMPUTER*/
-@media (min-width: 992px) {
+@media (min-width: 1300px) {
   .loader {
     width: 250px;
     height: 250px;
